@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Osasco Express — Agenda Digital Fase D2 Blindada</title>
+<style>
+:root{
+  --bg:#f4f6f8;--panel:#fff;--card:#fff;--text:#101828;--muted:#667085;--line:#e4e7ec;
+  --red:#e30613;--red-dark:#b80710;--soft-red:#fff1f2;--green:#12a150;--soft-green:#ecfdf3;
+  --amber:#f59e0b;--soft-amber:#fff7ed;--blue:#2563eb;--soft-blue:#eff6ff;--danger:#dc2626;
+  --shadow:0 16px 40px rgba(16,24,40,.08);--shadow-sm:0 6px 18px rgba(16,24,40,.06);
+  --r:18px;--top:72px;--bottom:76px;font-family:Inter,Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:linear-gradient(180deg,#f9fafb,#eef2f7);color:var(--text);font-family:Inter,Arial,Helvetica,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.55}a{color:inherit}.hidden{display:none!important}
+.app-top{position:sticky;top:0;z-index:30;height:var(--top);background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:0 22px}.brand{display:flex;align-items:center;gap:12px;min-width:0}.brand-mark{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;display:grid;place-items:center;font-weight:950;letter-spacing:-.05em;box-shadow:0 10px 24px rgba(227,6,19,.22);flex:0 0 auto}.brand-title{font-weight:950;letter-spacing:-.03em;white-space:nowrap}.brand-sub{display:block;font-size:12px;color:var(--muted);font-weight:800;margin-top:1px}.top-actions{margin-left:auto;display:flex;gap:10px;align-items:center}.menu-btn{display:none;border:1px solid #d0d5dd;background:#fff;border-radius:12px;padding:10px 12px;font-weight:900;color:#344054}.btn{border:1px solid #d0d5dd;background:#fff;color:#111827;border-radius:14px;min-height:42px;padding:10px 14px;font-weight:950;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;box-shadow:none}.btn:hover{border-color:#b8c0cc}.btn.primary{background:linear-gradient(135deg,var(--red),var(--red-dark));border:0;color:#fff;box-shadow:0 12px 26px rgba(227,6,19,.18)}.btn.green{background:var(--green);border:0;color:#fff}.btn.danger{background:var(--danger);border:0;color:#fff}.btn.ghost{background:#fff;color:#344054}.btn.sm{min-height:34px;padding:7px 10px;border-radius:11px;font-size:12px}.btn.full{width:100%}.btn.link{border:0;background:transparent;box-shadow:none;padding:0;color:var(--blue);min-height:auto}.app{display:grid;grid-template-columns:236px minmax(0,1fr);gap:18px;width:min(1400px,100%);margin:0 auto;padding:18px 22px 90px}.sidebar{position:sticky;top:calc(var(--top) + 18px);height:calc(100vh - var(--top) - 36px);background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:14px;display:flex;flex-direction:column;gap:8px}.nav-btn{width:100%;border:1px solid transparent;background:transparent;border-radius:15px;color:#344054;padding:13px 14px;text-align:left;font-weight:950;display:flex;align-items:center;gap:10px}.nav-btn:hover{background:#f8fafc}.nav-btn.active{background:var(--soft-red);border-color:#fecdd3;color:var(--red)}.nav-sep{height:1px;background:var(--line);margin:auto 0 10px}.main{min-width:0}.screen{display:none}.screen.active{display:block}.locked-admin-access{display:none!important}.security-lock{border:1px solid #fecdd3;background:#fff1f2;color:#991b1b;border-radius:16px;padding:13px;font-weight:800}.privacy-card{border:1px solid #bfdbfe;background:#eff6ff;color:#1d4ed8;border-radius:16px;padding:13px;font-weight:750}.blocked-card{border:1px solid #fecdd3;background:#fff1f2;color:#991b1b;border-radius:22px;padding:22px;box-shadow:var(--shadow-sm)}.blocked-card h2{margin:0 0 8px}.status-dot{display:inline-flex;align-items:center;gap:6px}.status-dot:before{content:"";width:8px;height:8px;border-radius:99px;background:#16a34a}.status-dot.blocked:before{background:#dc2626}.page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin:6px 0 16px}.page-head h1{font-size:30px;line-height:1.06;margin:0;letter-spacing:-.05em}.page-head p{margin:6px 0 0;color:var(--muted);font-weight:650}.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-sm);padding:18px;min-width:0}.agenda-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:18px;align-items:start}.calendar-card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:12px;min-width:0;overflow:hidden}.week-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;min-width:0}.day-col{min-width:0;background:#fbfcfe;border:1px solid #edf0f4;border-radius:18px;padding:8px;display:flex;flex-direction:column;gap:8px}.day-head{height:78px;border-radius:15px;background:#fff;border:1px solid #edf0f4;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#344054}.day-head.active{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border-color:transparent}.day-head .dow{font-size:11px;font-weight:950;text-transform:uppercase}.day-head .num{font-size:25px;font-weight:950;line-height:1;letter-spacing:-.05em}.day-head .mon{font-size:11px;font-weight:900;margin-top:4px}.slot-card{position:relative;width:100%;min-width:0;border:1px solid #dfe4ec;background:#fff;border-radius:16px;padding:11px 9px;text-align:left;min-height:104px;display:flex;flex-direction:column;justify-content:space-between;gap:7px;transition:.15s ease;box-shadow:0 4px 12px rgba(16,24,40,.04);overflow:hidden}.slot-card.available:hover{transform:translateY(-2px);border-color:#bcc5d2;box-shadow:0 10px 22px rgba(16,24,40,.09)}.slot-card.selected{border-color:var(--red);background:var(--soft-red);box-shadow:0 0 0 1px rgba(227,6,19,.08)}.slot-card.soldout{background:#f2f4f7;color:#98a2b3;border-color:#e5e7eb;cursor:not-allowed}.slot-check{position:absolute;right:8px;top:8px;width:18px;height:18px;border:1.6px solid #cbd5e1;border-radius:6px;background:#fff;display:grid;place-items:center;color:#fff;font-size:12px;font-weight:950}.slot-card.selected .slot-check{background:var(--red);border-color:var(--red)}.slot-time{display:block;max-width:calc(100% - 22px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1;font-weight:950;font-size:clamp(12px,1vw,15px);letter-spacing:-.035em;color:#111827}.slot-company{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;line-height:1.18;color:#475467;font-weight:800}.slot-badge{align-self:flex-start;white-space:nowrap;border-radius:999px;padding:5px 8px;font-size:10.5px;font-weight:950;background:var(--soft-green);color:#04843d;border:1px solid #bbf7d0}.slot-card.selected .slot-badge{background:#fff;color:var(--red);border-color:#fecdd3}.slot-card.soldout .slot-badge{background:#fff7ed;color:#d97706;border-color:#fed7aa}.summary-panel{position:sticky;top:calc(var(--top) + 18px);background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:18px}.summary-panel h2{font-size:24px;letter-spacing:-.045em;margin:0 0 8px}.count-pill{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;border-radius:999px;background:var(--soft-red);color:var(--red);font-weight:950;border:1px solid #fecdd3}.chosen-list{display:grid;gap:8px;margin:14px 0}.chosen-item{border:1px solid var(--line);border-radius:14px;background:#fbfcfe;padding:10px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.chosen-item b{display:block;white-space:nowrap;font-size:13px}.chosen-item span{display:block;color:var(--muted);font-size:12px;margin-top:2px}.notice{border:1px solid #fed7aa;background:var(--soft-amber);color:#9a3412;border-radius:16px;padding:13px;line-height:1.45;font-size:13px;font-weight:700}.notice.blue{background:var(--soft-blue);border-color:#bfdbfe;color:#1d4ed8}.notice.green{background:var(--soft-green);border-color:#bbf7d0;color:#166534}.notice.danger{background:var(--soft-red);border-color:#fecdd3;color:#b91c1c}.mobile-days{display:none}.mobile-actionbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);box-shadow:0 -12px 34px rgba(16,24,40,.10);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px;align-items:center}.mobile-actionbar .mini{font-weight:950}.mobile-actionbar .mini span{display:block;color:var(--muted);font-size:12px;margin-top:1px}.bottom-nav{display:none;position:fixed;left:0;right:0;bottom:0;z-index:35;background:#fff;border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom));grid-template-columns:repeat(4,1fr);box-shadow:0 -10px 28px rgba(16,24,40,.08)}.bottom-nav button{border:0;background:transparent;color:#667085;border-radius:12px;padding:8px 4px;font-weight:900;font-size:11px}.bottom-nav button.active{background:var(--soft-red);color:var(--red)}.list{display:grid;gap:10px}.list-item{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm);padding:14px;display:flex;align-items:center;justify-content:space-between;gap:12px}.list-title{font-weight:950}.meta{color:var(--muted);font-size:12px;line-height:1.45;margin-top:4px}.badge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#344054;padding:5px 9px;font-size:11px;font-weight:950;white-space:nowrap}.badge.ok{background:var(--soft-green);border-color:#bbf7d0;color:#15803d}.badge.warn{background:var(--soft-amber);border-color:#fed7aa;color:#b45309}.badge.danger{background:var(--soft-red);border-color:#fecdd3;color:#b91c1c}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff}table{width:100%;border-collapse:collapse;min-width:860px}th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left;font-size:13px;vertical-align:middle}th{background:#f9fafb;color:#667085;font-size:11px;text-transform:uppercase;letter-spacing:.04em}.form{display:grid;gap:12px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-size:12px;font-weight:950;color:#344054;margin-bottom:6px}input,select,textarea{width:100%;background:#fff;color:#101828;border:1px solid #d0d5dd;border-radius:14px;padding:12px;outline:0}textarea{min-height:92px;resize:vertical}.footer{margin-top:18px;padding:14px 2px;color:#667085;font-size:12px;line-height:1.5}.drawer{display:none;position:fixed;inset:0;z-index:80;background:rgba(15,23,42,.42)}.drawer.open{display:block}.drawer-panel{width:min(320px,86vw);height:100%;background:#fff;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}.drawer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.modal{display:none;position:fixed;inset:0;background:rgba(15,23,42,.48);z-index:100;align-items:center;justify-content:center;padding:16px}.modal.open{display:flex}.modal-box{width:min(640px,100%);max-height:92vh;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 24px 90px rgba(16,24,40,.24);padding:18px}.modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}.modal-head h2{margin:0;font-size:24px;letter-spacing:-.04em}.x{width:38px;height:38px;border:1px solid var(--line);border-radius:12px;background:#fff;font-weight:950}.terms{border:1px solid #fed7aa;background:#fff7ed;color:#9a3412;border-radius:15px;padding:12px;font-size:13px;line-height:1.45}.toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%) translateY(130px);z-index:120;background:#111827;color:#fff;border-radius:14px;padding:12px 16px;font-weight:950;box-shadow:0 20px 50px rgba(0,0,0,.25);max-width:calc(100% - 24px);text-align:center;transition:.18s}.toast.show{transform:translateX(-50%) translateY(0)}.admin-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}.admin-tabs .btn.active{background:var(--soft-red);color:var(--red);border-color:#fecdd3}.metric{display:flex;align-items:center;gap:12px}.metric-icon{width:44px;height:44px;border-radius:15px;background:var(--soft-red);display:grid;place-items:center}.metric b{font-size:27px;line-height:1}.metric span{display:block;color:var(--muted);font-size:12px;margin-top:2px}.copybox{white-space:pre-wrap;background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:12px;font-size:13px;line-height:1.45;color:#344054}.critical{border-left:5px solid var(--danger)!important}.admin-only{display:none}.admin-mode .admin-only{display:flex!important}.brand-mark{background:#050505;overflow:hidden}.brand-mark img{width:100%;height:100%;object-fit:contain;padding:4px}.weekly-grid{display:grid;grid-template-columns:1.2fr .8fr .9fr .9fr .7fr;gap:8px;align-items:end}.audit-box{border:1px dashed #d0d5dd;background:#fbfcfe;border-radius:18px;padding:14px}.filters{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px}@media(max-width:960px){.weekly-grid,.filters{grid-template-columns:1fr}}
+@media(max-width:1180px){.app{grid-template-columns:216px minmax(0,1fr);padding-left:14px;padding-right:14px}.agenda-layout{grid-template-columns:minmax(0,1fr) 300px;gap:14px}.week-grid{gap:7px}.day-col{padding:6px}.slot-card{padding:10px 7px;min-height:100px}.slot-time{font-size:12px}.slot-company{font-size:11px}.summary-panel{padding:14px}}
+@media(max-width:960px){:root{--top:64px}.app-top{height:var(--top);padding:0 12px}.menu-btn{display:inline-flex}.brand-mark{width:40px;height:40px;border-radius:14px}.brand-title{font-size:14px}.brand-sub{font-size:11px}.top-actions .desktop-only{display:none}.app{display:block;padding:14px 12px calc(var(--bottom) + 22px)}.sidebar{display:none}.page-head{display:block;margin-top:4px}.page-head h1{font-size:25px}.agenda-layout{display:block}.summary-panel{position:relative;top:auto;margin-top:14px}.calendar-card{padding:0;border:0;background:transparent;box-shadow:none;overflow:visible}.week-grid{display:block}.day-col{display:none;background:transparent;border:0;padding:0}.day-col.mobile-active{display:flex;gap:10px}.day-head{display:none}.mobile-days{display:flex;gap:8px;overflow:auto;padding:2px 2px 12px;margin:0 -2px}.mobile-day{min-width:66px;border:1px solid var(--line);background:#fff;border-radius:15px;padding:9px 8px;text-align:center;box-shadow:var(--shadow-sm)}.mobile-day.active{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border-color:transparent}.mobile-day b{display:block;font-size:20px;line-height:1}.mobile-day span{display:block;font-size:10px;font-weight:950;text-transform:uppercase}.slot-card{min-height:84px;padding:14px 14px 12px}.slot-time{font-size:18px;max-width:calc(100% - 34px)}.slot-company{font-size:13px}.slot-check{width:24px;height:24px;border-radius:8px}.summary-panel{display:none}.mobile-actionbar{display:flex}.bottom-nav{display:grid}.top-actions{gap:6px}.row,.g2,.g3{grid-template-columns:1fr}.list-item{display:block}.list-item .actions{margin-top:12px}.footer{padding-bottom:78px}.admin-tabs{overflow:auto;flex-wrap:nowrap;padding-bottom:4px}.modal-box{border-radius:20px}}
+
+
+/* === FASE C.2 — correção cirúrgica de responsividade e área útil ===
+   Objetivo: a agenda deve aparecer inteira em notebook comum, sem o resumo lateral esmagar a agenda. */
+:root{--top:58px;--bottom:68px}
+.app-top{height:var(--top);padding:0 16px;gap:10px}.brand-mark{width:38px;height:38px;border-radius:13px}.brand-title{font-size:14px}.brand-sub{font-size:11px}.btn{min-height:36px;padding:8px 11px;border-radius:12px;font-size:13px}.menu-btn{min-height:36px;padding:8px 10px}.app{width:100%;max-width:1366px;grid-template-columns:220px minmax(0,1fr);gap:12px;padding:10px 12px 76px}.sidebar{top:calc(var(--top) + 10px);height:calc(100vh - var(--top) - 20px);border-radius:20px;padding:10px}.nav-btn{padding:10px 11px;border-radius:13px;font-size:14px}.page-head{margin:0 0 10px}.page-head h1{font-size:24px}.page-head p{font-size:13px;margin-top:3px}.agenda-layout{grid-template-columns:minmax(0,1fr) 268px;gap:10px}.calendar-card{border-radius:18px;padding:7px}.week-grid{gap:5px}.day-col{border-radius:14px;padding:5px;gap:5px}.day-head{height:54px;border-radius:12px}.day-head .dow{font-size:10px}.day-head .num{font-size:20px}.day-head .mon{font-size:10px;margin-top:2px}.slot-card{min-height:76px;border-radius:12px;padding:7px 6px;gap:4px}.slot-check{right:6px;top:6px;width:16px;height:16px;border-radius:5px}.slot-time{max-width:calc(100% - 20px);font-size:clamp(11px,.86vw,13px);line-height:1;letter-spacing:-.04em}.slot-company{font-size:10.5px;line-height:1.1}.slot-badge{padding:3px 6px;font-size:9.5px}.summary-panel{top:calc(var(--top) + 10px);border-radius:18px;padding:11px;max-height:calc(100vh - var(--top) - 20px);overflow:auto}.summary-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.summary-panel h2{font-size:18px;margin:0 0 2px}.summary-panel .meta{font-size:11px;margin:0}.count-pill{min-width:23px;height:23px;font-size:12px}.chosen-list{gap:6px;margin:9px 0;max-height:130px;overflow:auto}.chosen-item{padding:7px;border-radius:11px}.chosen-item b{font-size:12px}.chosen-item span{font-size:10.5px}.summary-panel .btn.full{min-height:36px}.compact-secondary{margin-top:6px!important}.summary-panel .notice{padding:8px 9px;border-radius:12px;font-size:11px;line-height:1.28}.compact-operational{margin-top:8px!important}.compact-notice{margin:0}.footer{margin-top:10px;padding:8px 2px;font-size:11px}
+@media(max-width:1240px){.app{grid-template-columns:198px minmax(0,1fr);gap:10px}.agenda-layout{grid-template-columns:minmax(0,1fr) 238px}.nav-btn{font-size:13px}.slot-card{min-height:72px}.slot-time{font-size:11px}.summary-panel{padding:10px}.summary-panel h2{font-size:17px}.summary-panel .notice{display:none}.chosen-list{max-height:105px}}
+@media(max-width:1100px){.app{display:block;padding:10px 10px 82px}.sidebar{display:none}.menu-btn{display:inline-flex}.top-actions .desktop-only{display:none}.agenda-layout{display:block}.summary-panel{position:relative;top:auto;max-height:none;overflow:visible;margin-bottom:10px;display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center}.summary-panel .summary-top{grid-column:1}.summary-panel .chosen-list{display:none}.summary-panel .compact-secondary,.summary-panel .compact-operational{display:none!important}.summary-panel .btn.primary{width:auto;min-width:160px}.calendar-card{padding:6px}.week-grid{grid-template-columns:repeat(7,minmax(86px,1fr));gap:5px}.day-head{height:50px}.slot-card{min-height:70px}.drawer{display:none}.drawer.open{display:block}}
+@media(max-width:760px){:root{--top:58px}.app-top{padding:0 10px}.app{padding:10px 10px calc(var(--bottom) + 24px)}.page-head h1{font-size:22px}.mobile-days{padding-bottom:8px}.mobile-day{min-width:58px;padding:7px 7px;border-radius:13px}.mobile-day b{font-size:18px}.day-col.mobile-active{gap:8px}.slot-card{min-height:76px;padding:11px 12px}.slot-time{font-size:17px;max-width:calc(100% - 30px)}.slot-company{font-size:12px}.slot-badge{font-size:10px;padding:4px 7px}.mobile-actionbar{padding:8px 10px calc(8px + env(safe-area-inset-bottom));}.mobile-actionbar .btn{min-height:42px}.bottom-nav{display:none!important}.footer{padding-bottom:74px}}
+
+
+
+/* === FASE C.3 — respiro real para horário e nome do cliente ===
+   Correção: o card não pode parecer espremido. O horário tem prioridade,
+   o nome do cliente precisa respirar e a agenda deve ganhar área útil antes de cortar texto. */
+.slot-card{
+  min-height:88px;
+  padding:9px 8px 8px;
+  gap:6px;
+  justify-content:flex-start;
+}
+.slot-card > div:first-child{
+  display:grid;
+  grid-template-rows:auto auto;
+  gap:7px;
+  min-width:0;
+  padding-right:23px;
+}
+.slot-time{
+  max-width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  line-height:1.05;
+  font-size:clamp(12px,.92vw,14px);
+  letter-spacing:-.035em;
+}
+.slot-company{
+  white-space:normal;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  line-height:1.18;
+  min-height:2.36em;
+  font-size:11px;
+  word-break:normal;
+  hyphens:auto;
+}
+.slot-badge{margin-top:auto;max-width:100%;overflow:hidden;text-overflow:ellipsis;}
+.slot-check{right:7px;top:7px;}
+
+/* Em notebook comum, a agenda tem prioridade: resumo lateral vira compacto acima. */
+@media(max-width:1366px){
+  .app{grid-template-columns:190px minmax(0,1fr);gap:9px;padding-left:10px;padding-right:10px;}
+  .agenda-layout{grid-template-columns:minmax(0,1fr);gap:10px;}
+  .summary-panel{
+    position:relative;top:auto;max-height:none;overflow:visible;margin:0 0 8px;
+    display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:8px;
+    padding:9px 10px;border-radius:16px;
+  }
+  .summary-panel .summary-top{grid-column:1;}
+  .summary-panel h2{font-size:17px;margin:0;}
+  .summary-panel .meta{font-size:11px;margin:1px 0 0;}
+  .summary-panel .chosen-list,.summary-panel .compact-secondary,.summary-panel .compact-operational{display:none!important;}
+  .summary-panel .btn.primary{width:auto;min-width:150px;}
+  .calendar-card{padding:7px;}
+  .week-grid{gap:6px;}
+  .day-col{padding:6px;gap:6px;}
+  .slot-card{min-height:86px;padding:9px 8px 8px;}
+  .slot-time{font-size:clamp(12px,.9vw,14px);}
+  .slot-company{font-size:11px;}
+}
+
+/* Quando a largura ainda aperta, some a lateral e mantém menu no topo. */
+@media(max-width:1180px){
+  .app{display:block;padding:10px 10px 82px;}
+  .sidebar{display:none;}
+  .menu-btn{display:inline-flex;}
+  .top-actions .desktop-only{display:none;}
+  .week-grid{grid-template-columns:repeat(7,minmax(96px,1fr));gap:5px;}
+  .slot-card{min-height:84px;padding:8px 7px;}
+  .slot-time{font-size:12px;}
+  .slot-company{font-size:10.8px;line-height:1.16;}
+  .drawer{display:none}.drawer.open{display:block}
+}
+
+/* Mobile: lista vertical, horário grande e cliente legível. */
+@media(max-width:760px){
+  .slot-card{min-height:92px;padding:13px 14px 12px;border-radius:16px;}
+  .slot-card > div:first-child{gap:8px;padding-right:34px;}
+  .slot-time{font-size:18px;line-height:1.05;}
+  .slot-company{font-size:13px;line-height:1.22;min-height:auto;-webkit-line-clamp:2;}
+  .slot-badge{font-size:10.5px;padding:5px 8px;}
+  .slot-check{width:24px;height:24px;right:12px;top:12px;border-radius:8px;}
+}
+
+/* Telas muito estreitas: nunca sacrificar o horário; se precisar, o cliente usa 2 linhas. */
+@media(max-width:380px){
+  .slot-time{font-size:16px;}
+  .slot-company{font-size:12px;}
+  .slot-card{padding:12px;}
+}
+
+
+
+/* === FASE C.2 — cards premium com respiro real e agenda priorizada === */
+:root{--slot-radius:18px;--slot-pad:12px;}
+.app-top{height:64px;padding:0 16px;}
+.brand-mark{width:40px;height:40px;border-radius:14px}.brand-title{font-size:15px}.brand-sub{font-size:11px}
+.app{width:min(1440px,100%);grid-template-columns:204px minmax(0,1fr);gap:14px;padding:14px 16px 88px;}
+.sidebar{top:78px;height:calc(100vh - 92px);border-radius:22px;padding:12px}.nav-btn{padding:11px 12px;border-radius:14px;font-size:14px}.nav-sep{margin:auto 0 8px}.page-head{margin:2px 0 12px}.page-head h1{font-size:26px}.page-head p{font-size:13px;margin-top:4px}.agenda-layout{grid-template-columns:minmax(0,1fr) 286px;gap:14px}.calendar-card{border-radius:22px;padding:10px;overflow:visible}.week-grid{gap:8px;align-items:stretch}.day-col{border-radius:18px;padding:8px;gap:8px;background:linear-gradient(180deg,#fbfcff,#f6f8fb);overflow:visible}.day-head{height:58px;border-radius:14px}.day-head .num{font-size:22px}.day-head .dow,.day-head .mon{font-size:10px}.summary-panel{border-radius:22px;padding:14px}.summary-panel h2{font-size:20px}.summary-panel .notice{font-size:12px;padding:11px}.summary-panel .btn{min-height:40px}.slot-card{position:relative;display:flex;flex-direction:column;gap:8px;justify-content:flex-start;min-height:112px;padding:12px;border-radius:18px;border:1px solid #e2e8f0;background:linear-gradient(180deg,#ffffff,#fbfcff);box-shadow:0 8px 18px rgba(16,24,40,.055);overflow:hidden;text-align:left;isolation:isolate;}
+.slot-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#d0d5dd;opacity:.9}.slot-card.available:before{background:#22c55e}.slot-card.selected:before{background:var(--red)}.slot-card.soldout:before{background:#cbd5e1}.slot-card.available:hover{transform:translateY(-2px);border-color:#b9c4d2;box-shadow:0 14px 28px rgba(16,24,40,.10)}.slot-card.selected{border-color:#f5a3aa;background:linear-gradient(180deg,#fff7f8,#ffffff);box-shadow:0 0 0 2px rgba(227,6,19,.06),0 12px 26px rgba(227,6,19,.06)}.slot-card.soldout{background:#f4f6f8;border-color:#e5e7eb;color:#98a2b3}.slot-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;min-width:0}.slot-time{display:block;flex:1;min-width:0;max-width:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.02;font-size:clamp(14px,1.12vw,17px);font-weight:950;letter-spacing:-.055em;color:#101828}.slot-check{position:static;flex:0 0 auto;width:22px;height:22px;border:1.7px solid #cbd5e1;border-radius:8px;background:#fff;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:950;box-shadow:0 1px 2px rgba(16,24,40,.06)}.slot-card.selected .slot-check{background:var(--red);border-color:var(--red);color:#fff}.slot-client{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:#344054;font-size:12.5px;font-weight:850;line-height:1.22;min-height:2.44em;word-break:normal;hyphens:none;padding-right:0}.slot-card.soldout .slot-time,.slot-card.soldout .slot-client{color:#98a2b3}.slot-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:7px;min-width:0}.slot-badge{margin:0;display:inline-flex;align-items:center;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-radius:999px;padding:5px 8px;font-size:10.5px;line-height:1;font-weight:950;background:#ecfdf3;color:#067647;border:1px solid #abefc6}.slot-card.selected .slot-badge{background:#fff1f2;color:var(--red);border-color:#fecdd3}.slot-card.soldout .slot-badge{background:#fff;color:#b45309;border-color:#fed7aa}.slot-touch{display:none;font-size:10.5px;color:#667085;font-weight:900;white-space:nowrap}.slot-card.available .slot-touch{display:inline}.slot-card.selected .slot-touch{display:inline;color:var(--red)}
+
+@media(max-width:1500px){
+  .app{grid-template-columns:190px minmax(0,1fr);gap:10px;padding-left:10px;padding-right:10px}.agenda-layout{grid-template-columns:1fr}.summary-panel{order:-1;position:relative;top:auto;margin:0;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:8px;padding:10px 12px;border-radius:18px}.summary-panel .summary-top{grid-column:1}.summary-panel h2{font-size:18px;margin:0}.summary-panel .meta{font-size:11px;margin:1px 0 0}.summary-panel .chosen-list,.summary-panel .compact-secondary,.summary-panel .compact-operational{display:none!important}.summary-panel .btn.primary{width:auto;min-width:156px}.calendar-card{padding:8px}.week-grid{gap:7px}.day-col{padding:7px}.slot-card{min-height:106px;padding:11px}.slot-time{font-size:clamp(14px,1.05vw,16px)}.slot-client{font-size:12px}
+}
+@media(max-width:1180px){
+  .app{display:block;padding:10px 10px 86px}.sidebar{display:none}.menu-btn{display:inline-flex}.top-actions .desktop-only{display:none}.agenda-layout{display:block}.summary-panel{margin-bottom:10px}.week-grid{grid-template-columns:repeat(7,minmax(118px,1fr));gap:7px}.calendar-card{overflow-x:auto;scrollbar-width:thin}.calendar-card::-webkit-scrollbar{height:6px}.calendar-card::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}.day-col{min-width:118px}.slot-card{min-height:106px}.drawer{display:none}.drawer.open{display:block}
+}
+@media(max-width:960px){
+  .calendar-card{overflow:visible}.week-grid{display:block}.summary-panel{display:none}.mobile-actionbar{display:flex}.day-col{display:none;background:transparent;border:0;padding:0}.day-col.mobile-active{display:flex;gap:10px}.slot-card{min-height:96px;padding:14px;border-radius:18px}.slot-time{font-size:20px}.slot-client{font-size:13.5px;min-height:auto}.slot-check{width:26px;height:26px}.slot-badge{font-size:11px;padding:6px 9px}.slot-touch{display:inline}.mobile-days{display:flex;gap:8px;overflow:auto;padding:2px 2px 12px;margin:0 -2px}.mobile-day{min-width:66px;border:1px solid var(--line);background:#fff;border-radius:15px;padding:9px 8px;text-align:center;box-shadow:var(--shadow-sm)}.mobile-day.active{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border-color:transparent}.mobile-day b{display:block;font-size:20px;line-height:1}.mobile-day span{display:block;font-size:10px;font-weight:950;text-transform:uppercase}
+}
+@media(max-width:760px){
+  .app-top{height:58px}.brand-title{font-size:13px}.brand-sub{display:none}.brand-mark{width:36px;height:36px;border-radius:12px}.app{padding:10px 10px calc(var(--bottom) + 24px)}.page-head h1{font-size:22px}.slot-card{min-height:92px;padding:13px}.slot-time{font-size:18px}.slot-client{font-size:13px;line-height:1.22}.slot-footer{gap:6px}.bottom-nav{display:none!important}
+}
+@media(max-width:390px){.slot-time{font-size:17px}.slot-client{font-size:12.5px}.slot-card{padding:12px}.mobile-day{min-width:58px}}
+
+
+/* Rodapé institucional profissional */
+.professional-footer{
+  margin-top:18px;
+  padding:18px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:var(--shadow-sm);
+  color:#475467;
+  font-size:12px;
+  line-height:1.45;
+}
+.footer-brand-block{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  padding-bottom:12px;
+  border-bottom:1px solid #edf0f4;
+}
+.footer-brand-block strong{
+  color:#101828;
+  font-size:13px;
+  font-weight:950;
+}
+.footer-brand-block span{
+  color:#667085;
+  font-weight:750;
+  text-align:right;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  padding:14px 0;
+}
+.footer-info{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.footer-label{
+  color:#98a2b3;
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.footer-info span:not(.footer-label),
+.footer-info a{
+  color:#344054;
+  font-weight:850;
+  text-decoration:none;
+}
+.footer-info a:hover{
+  color:var(--red);
+  text-decoration:underline;
+}
+.footer-legal{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding-top:12px;
+  border-top:1px solid #edf0f4;
+  color:#667085;
+  font-size:11px;
+  font-weight:700;
+}
+@media(max-width:960px){
+  .professional-footer{padding:15px;margin-bottom:10px}
+  .footer-brand-block,.footer-legal{display:grid;text-align:left}
+  .footer-brand-block span{text-align:left}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .footer-grid{grid-template-columns:1fr}
+  .footer-legal{font-size:10.5px}
+}
+
+</style>
+</head>
+<body>
+<header class="app-top">
+  <button class="menu-btn" id="openMenu" type="button">☰ Menu</button>
+  <div class="brand"><div class="brand-mark"><img src="assets/logo_osasco_express_personalizado.png" alt="Osasco Express"></div><div><div class="brand-title">OSASCO EXPRESS</div><span class="brand-sub">Agenda operacional</span></div></div>
+  <div class="top-actions">
+    <button class="btn ghost" id="adminLoginBtn" type="button">Admin</button>
+    <button class="btn ghost desktop-only" id="topSupport" type="button">Suporte</button>
+    <button class="btn ghost desktop-only locked-admin-access" id="resetDemo" type="button" title="Disponível apenas no modo suporte">Limpar demo</button>
+  </div>
+</header>
+<div class="drawer" id="drawer"><div class="drawer-panel"><div class="drawer-head"><strong>Menu</strong><button class="x" data-close-drawer>×</button></div><div id="drawerNav"></div></div></div>
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebarNav"></aside>
+  <main class="main">
+    <section class="screen active" id="screen-agenda"></section>
+    <section class="screen" id="screen-reservas"></section>
+    <section class="screen" id="screen-suporte"></section>
+    <section class="screen" id="screen-perfil"></section>
+    <section class="screen" id="screen-admin"></section>
+    <footer class="footer professional-footer" aria-label="Dados institucionais da Osasco Express">
+      <div class="footer-brand-block">
+        <strong>Osasco Express Serviços Ltda</strong>
+        <span>Agenda Operacional · Uso interno e parceiros cadastrados</span>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-info">
+          <span class="footer-label">CNPJ operacional</span>
+          <span>54.707.097/0001-04</span>
+        </div>
+        <div class="footer-info">
+          <span class="footer-label">Endereço</span>
+          <span>Av. Diogo Antônio Feijó, 8555 · Km 18 · Osasco/SP</span>
+        </div>
+        <div class="footer-info">
+          <span class="footer-label">Suporte e vagas</span>
+          <a href="https://wa.me/11924782555" target="_blank" rel="noopener">WhatsApp 11 92478-2555</a>
+        </div>
+        <div class="footer-info">
+          <span class="footer-label">SAC</span>
+          <a href="https://wa.me/5511986661784" target="_blank" rel="noopener">WhatsApp 11 98666-1784</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>© 2026 Osasco Express Serviços Ltda. Todos os direitos reservados.</span>
+        <span>CNPJ titular dos direitos autorais: 49.846.063/0001-52.</span>
+      </div>
+    </footer>
+  </main>
+</div>
+<nav class="bottom-nav" id="bottomNav"></nav>
+<div class="mobile-actionbar" id="mobileActionbar"><div class="mini"><strong id="mobileCount">0 selecionados</strong><span>Confira antes de confirmar.</span></div><button class="btn primary full" id="mobileConfirm" type="button">Confirmar</button></div>
+<div class="modal" id="confirmModal"><div class="modal-box"><div class="modal-head"><div><h2>Confirmar reservas</h2><p class="meta">Preencha seus dados e confirme somente os horários que você consegue atender.</p></div><button class="x" data-close-modal>×</button></div><form class="form" id="confirmForm"><div class="row"><div class="field"><label>Nome</label><input id="firstName" required minlength="2" autocomplete="given-name"></div><div class="field"><label>Sobrenome</label><input id="lastName" required minlength="2" autocomplete="family-name"></div></div><div class="field"><label>WhatsApp com DDD</label><input id="whats" required inputmode="tel" placeholder="11999999999"></div><div class="terms"><label style="display:flex;gap:10px;align-items:flex-start;font-weight:800"><input id="terms" type="checkbox" required style="width:auto;margin-top:3px"> <span>Li e aceito o Termo de Ciência da Agenda Digital: atuo como parceiro autônomo, escolho voluntariamente estes horários disponíveis, sem vínculo empregatício, sem exclusividade, sem subordinação e sem controle de jornada. Estou ciente de que posso aceitar ou não oportunidades e que, se eu não puder atender uma reserva assumida, devo reabrir pelo sistema para organização operacional do suporte.</span></label></div><div class="privacy-card" style="margin-top:10px">Privacidade: a agenda registra nome, WhatsApp, reservas, aceite digital, versão do termo, data e histórico operacional para controle da prestação de serviço e segurança da operação. Solicitações de correção ou exclusão devem ser enviadas ao SAC.</div><div id="confirmChosen" class="chosen-list"></div><div class="row"><button class="btn ghost full" type="button" data-close-modal>Voltar</button><button class="btn primary full" type="submit">Confirmar reservas</button></div></form></div></div>
+<div class="modal" id="releaseModal"><div class="modal-box"><div class="modal-head"><div><h2>Reabrir horário</h2><p class="meta">Não tem problema liberar um horário. O importante é reabrir pelo sistema para o suporte agir a tempo.</p></div><button class="x" data-close-modal>×</button></div><div id="releaseDetails" class="card" style="box-shadow:none;margin-bottom:12px"></div><div class="field"><label>Recado opcional para o suporte</label><textarea id="releaseNote" placeholder="Ex.: tive um imprevisto e não vou conseguir atender esse horário."></textarea></div><div class="notice">Ao confirmar, o horário volta para a agenda e o suporte recebe uma mensagem pronta no WhatsApp oficial.</div><div class="row" style="margin-top:12px"><button class="btn ghost full" type="button" data-close-modal>Voltar</button><button class="btn primary full" id="doRelease" type="button">Reabrir e avisar suporte</button></div></div></div>
+<div class="modal" id="copyModal"><div class="modal-box"><div class="modal-head"><div><h2 id="copyTitle">Mensagem para cliente</h2><p class="meta">Copie a mensagem e envie no grupo do cliente.</p></div><button class="x" data-close-modal>×</button></div><div class="copybox" id="copyText"></div><div class="row" style="margin-top:12px"><button class="btn ghost full" type="button" data-close-modal>Voltar</button><button class="btn primary full" id="copyNow" type="button">Copiar mensagem</button></div></div></div>
+<div class="modal" id="companyModal"><div class="modal-box"><div class="modal-head"><div><h2>Editar empresa</h2><p class="meta">Altere dados, horários e padrão semanal sem mexer no código.</p></div><button class="x" data-close-modal>×</button></div><form class="form" id="companyEditForm"><input type="hidden" id="editCompanyId"><div class="row"><div class="field"><label>Nome</label><input id="editCompanyName" required></div><div class="field"><label>Status</label><select id="editCompanyStatus"><option value="ativo">ativo</option><option value="inativo">inativo</option></select></div></div><div class="row"><div class="field"><label>Telefone</label><input id="editCompanyPhone" inputmode="tel"></div><div class="field"><label>Grupo WhatsApp</label><input id="editCompanyGroup" placeholder="https://chat.whatsapp.com/..."></div></div><div class="row"><div class="field"><label>Entrada padrão</label><input id="editCompanyStart" placeholder="18H"></div><div class="field"><label>Saída padrão</label><input id="editCompanyEnd" placeholder="00H"></div></div><div class="field"><label>Observações</label><textarea id="editCompanyObs"></textarea></div><div class="audit-box"><b>Padrão semanal</b><p class="meta">Use 0 vaga para não gerar horário no dia. Horários podem ser diferentes por dia.</p><div id="weeklyEditor" class="form"></div></div><div class="row"><button class="btn ghost full" type="button" data-close-modal>Cancelar</button><button class="btn primary full" type="submit">Salvar alterações</button></div></form></div></div>
+<div class="toast" id="toast"></div>
+<script>
+(()=>{
+'use strict';
+const SUPPORT_WA='5511924782555';
+const SAC_WA='5511986661784';
+const TERMS_TEXT='Termo de Ciência da Agenda Digital: o usuário declara atuar como parceiro autônomo, escolher voluntariamente horários disponíveis, sem vínculo empregatício, sem exclusividade, sem subordinação e sem controle de jornada. Declara ciência de que pode aceitar ou não oportunidades e que deve reabrir pelo sistema uma reserva que não puder atender para organização operacional do suporte.';
+const TERMS_VERSION='agenda-operacional-d2-blindada-v2.0';
+const PRIVACY_VERSION='lgpd-operacional-d2-v1.0';
+const $=s=>document.querySelector(s);
+const $$=s=>Array.from(document.querySelectorAll(s));
+const uid=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-4);
+const now=()=>new Date().toLocaleString('pt-BR');
+const cleanPhone=v=>(v||'').replace(/\D/g,'');
+const enc=s=>encodeURIComponent(s);
+const wa=(phone,msg)=>`https://wa.me/${phone}?text=${enc(msg)}`;
+let state={screen:'agenda',day:0,selected:new Set(),releaseId:null,admin:false,adminTab:'painel',riderWhats:localStorage.getItem('oeAgendaFaseD2_rider_whats')||''};
+const ADMIN_ROUTE='#suporte-osasco-admin';
+const adminRouteOpen=()=>location.hash===ADMIN_ROUTE;
+function buildWeekDays(base=new Date()){
+ const dows=['SEG','TER','QUA','QUI','SEX','SÁB','DOM'];
+ const fullDows=['Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado','Domingo'];
+ const mons=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+ const start=new Date(base);
+ const jsDay=start.getDay();
+ const diff=jsDay===0?-6:1-jsDay;
+ start.setHours(0,0,0,0);
+ start.setDate(start.getDate()+diff);
+ return Array.from({length:7},(_,i)=>{
+   const cur=new Date(start);cur.setDate(start.getDate()+i);
+   return {dow:dows[i],num:cur.getDate(),mon:mons[cur.getMonth()],full:`${fullDows[i]}, ${cur.getDate()} de ${mons[cur.getMonth()]} de ${cur.getFullYear()}`};
+ });
+}
+const days=buildWeekDays();
+const companiesDefault=[
+ {id:'camila',name:'Pastel da Camila',phone:'',group:'https://chat.whatsapp.com/Ie2qpJoOhFx6c0nW2acYoJ',obs:'Padrão contratado: segunda 0 vagas; terça a domingo 4 vagas. Horário operacional será refinado no cadastro final.',status:'ativo'},
+ {id:'bevenutti',name:'Pizzaria Bevenutti',phone:'',group:'https://chat.whatsapp.com/CaFE5AiQlCAK8SxDb23WNQ',obs:'Padrão contratado: seg 3, ter 3, qua 4, qui 4, sex 8, sáb 8, dom 6.',status:'ativo'},
+ {id:'drica',name:'Pastel da Drica',phone:'11983933969',group:'',obs:'Padrão contratado: 18H - 00H. Seg 2, ter 2, qua 2, qui 2, sex 3, sáb 4, dom 3.',status:'ativo'},
+ {id:'meridio',name:'Meridio Pizza',phone:'',group:'',obs:'Padrão contratado: 18H - 00H. Ter 2, qua 2, qui 2, sex 4, sáb 4, dom 6. Segunda sem vagas cadastradas.',status:'ativo'}
+];
+const contractedSlots={
+ camila:{short:'A DEFINIR',full:'Horário operacional do cliente — a definir no cadastro final',capacity:[0,4,4,4,4,4,4]},
+ bevenutti:{short:'18H - 00H',full:'18:00 às 00:00',capacity:[3,3,4,4,8,8,6]},
+ drica:{short:'18H - 00H',full:'18:00 às 00:00',capacity:[2,2,2,2,3,4,3]},
+ meridio:{short:'18H - 00H',full:'18:00 às 00:00',capacity:[0,2,2,2,4,4,6]}
+};
+function defaultWeekly(companyId){const cfg=contractedSlots[companyId]||{short:'18H - 00H',full:'18:00 às 00:00',capacity:[0,0,0,0,0,0,0]};return days.map((d,i)=>({day:i,active:(cfg.capacity[i]||0)>0,capacity:cfg.capacity[i]||0,short:cfg.short,full:cfg.full,start:(cfg.full||'').split(' às ')[0]||'',end:(cfg.full||'').split(' às ')[1]||''}));}
+function weeklyForCompany(c){return Array.isArray(c.weekly)&&c.weekly.length===7?c.weekly:defaultWeekly(c.id)}
+function requireAdmin(){if(!state.admin){toast('Ação restrita ao suporte.');return false;}return true;}
+function updateSlotsCompanyData(company){db.slots.filter(s=>s.companyId===company.id).forEach(s=>{s.company=company.name;});}
+function upsertSlotFromPattern(company,pattern){const cap=Math.max(0,Math.min(50,parseInt(pattern.capacity,10)||0));if(!pattern.active||cap<=0)return 0;const short=cleanText(pattern.short||`${pattern.start||''} - ${pattern.end||''}`,18).toUpperCase()||'A DEFINIR';const full=cleanText(pattern.full||`${pattern.start||''} às ${pattern.end||''}`,40)||'Horário a definir';const exists=db.slots.find(s=>s.companyId===company.id&&s.day===pattern.day&&s.short===short&&s.full===full);if(exists){exists.company=company.name;exists.capacity=cap;exists.status='available';return 0;}db.slots.push({id:`${company.id}-${pattern.day}-${uid()}`,day:pattern.day,short,full,company:company.name,companyId:company.id,capacity:cap,reserved:[],status:'available'});return 1;}
+function generateWeekFromPatterns(){if(!requireAdmin())return;let created=0,skipped=0;db.companies.filter(c=>c.status==='ativo').forEach(c=>weeklyForCompany(c).forEach(p=>{const before=db.slots.length;created+=upsertSlotFromPattern(c,p);if(db.slots.length===before)skipped++;}));db.history.push({type:'Agenda semanal gerada',text:`${created} disponibilidade(s) criadas. ${skipped} já existiam, estavam inativas ou com 0 vaga.`,at:now()});save();renderAll();toast(`Agenda gerada: ${created} nova(s) disponibilidade(s).`)}
+
+function defaultSlots(){
+ const out=[];
+ companiesDefault.forEach((co,ci)=>{
+   const cfg=contractedSlots[co.id];
+   if(!cfg)return;
+   days.forEach((d,di)=>{
+     const cap=cfg.capacity[di]||0;
+     if(cap<=0)return;
+     out.push({
+       id:`${co.id}-${di}`,day:di,short:cfg.short,full:cfg.full,company:co.name,companyId:co.id,
+       capacity:cap,reserved:[],status:'available'
+     });
+   });
+ });
+ return out;
+}
+const STORAGE_KEY='oeAgendaFaseD2_blindada_clientes_padrao_v1';
+function esc(v){return String(v??'').replace(/[&<>'\"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','\"':'&quot;'}[m]));}
+function cleanText(v,max=120){return String(v??'').replace(/[<>]/g,'').replace(/\s+/g,' ').trim().slice(0,max);}
+function safeGroupUrl(v){v=String(v??'').trim();return /^https:\/\/(chat\.whatsapp\.com|wa\.me)\//i.test(v)?v:'';}
+function load(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'null')}catch(e){return null}}
+function normalizeDb(d){
+ if(!d||!Array.isArray(d.slots)) return null;
+ d.companies=(Array.isArray(d.companies)?d.companies:companiesDefault).map(c=>{const id=cleanText(c.id||uid(),30);return {id,name:cleanText(c.name,70)||'Empresa',phone:cleanPhone(c.phone||''),group:safeGroupUrl(c.group),obs:cleanText(c.obs,180),status:c.status==='inativo'?'inativo':'ativo',start:cleanText(c.start||'',12),end:cleanText(c.end||'',12),weekly:(Array.isArray(c.weekly)?c.weekly:defaultWeekly(id)).slice(0,7).map((w,i)=>({day:i,active:w.active!==false,capacity:Math.max(0,Math.min(50,parseInt(w.capacity,10)||0)),short:cleanText(w.short||'',18).toUpperCase(),full:cleanText(w.full||'',40),start:cleanText(w.start||'',12),end:cleanText(w.end||'',12)}))};});
+ d.slots=d.slots.map(s=>{const cap=Math.max(0,parseInt(s.capacity,10)||0);return {id:cleanText(s.id||uid(),40),day:Math.min(6,Math.max(0,parseInt(s.day,10)||0)),short:cleanText(s.short,18).toUpperCase(),full:cleanText(s.full,40),company:cleanText(s.company,70),companyId:cleanText(s.companyId,40),capacity:cap,reserved:(Array.isArray(s.reserved)?s.reserved:[]).slice(0,cap).map(r=>({id:cleanText(r.id||uid(),40),name:cleanText(r.name,90),first:cleanText(r.first,40),last:cleanText(r.last,40),whats:cleanPhone(r.whats||''),acceptedTerms:!!r.acceptedTerms,acceptedTermsAt:cleanText(r.acceptedTermsAt,40),acceptedTermsVersion:cleanText(r.acceptedTermsVersion,20),acceptedTermsText:cleanText(r.acceptedTermsText,500),privacyVersion:cleanText(r.privacyVersion||'',40),reservationBatchId:cleanText(r.reservationBatchId,40),reservationSource:cleanText(r.reservationSource,40)})),status:cap>0?'available':'soldout'};});
+ d.alerts=(Array.isArray(d.alerts)?d.alerts:[]).map(a=>({id:cleanText(a.id||uid(),40),title:cleanText(a.title,80),body:cleanText(a.body,600),createdAt:cleanText(a.createdAt,40),done:!!a.done}));
+ d.history=(Array.isArray(d.history)?d.history:[]).map(h=>({type:cleanText(h.type,80),text:cleanText(h.text,260),at:cleanText(h.at,40)}));
+ d.settings={support:cleanPhone(d.settings?.support||'11924782555'),sac:cleanPhone(d.settings?.sac||'11986661784')};
+ d.blockedPartners=(Array.isArray(d.blockedPartners)?d.blockedPartners:[]).map(b=>({id:cleanText(b.id||uid(),40),name:cleanText(b.name,90),whats:cleanPhone(b.whats||''),reason:cleanText(b.reason||'Restrição operacional registrada pelo suporte.',180),blockedAt:cleanText(b.blockedAt||now(),40),status:b.status==='released'?'released':'blocked'})).filter(b=>b.whats);
+ return d;
+}
+function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(db));}
+let db=normalizeDb(load())||{slots:defaultSlots(),companies:companiesDefault,alerts:[],history:[],blockedPartners:[],settings:{support:'11924782555',sac:'11986661784'}};
+function remaining(s){return Math.max(0,(parseInt(s.capacity,10)||0)-(Array.isArray(s.reserved)?s.reserved.length:0));}
+function slotStatus(slot){if((parseInt(slot.capacity,10)||0)<=0) return 'soldout'; if(remaining(slot)<=0) return 'soldout'; return 'available'}
+function blockedRecord(whats){const w=cleanPhone(whats);return (db.blockedPartners||[]).find(b=>b.whats===w&&b.status==='blocked')}
+function isBlockedWhats(whats){return !!blockedRecord(whats)}
+function selectedSlots(){return db.slots.filter(s=>state.selected.has(s.id));}
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2600)}
+function navItems(){
+ const items=[['agenda','⏱️','Horários'],['reservas','🧾','Minhas reservas'],['suporte','🎧','Suporte'],['perfil','👤','Perfil']];
+ if(state.admin) items.push(['admin','🛠️','Admin']);
+ return items;
+}
+function renderNav(){
+ const items=navItems();
+ const accessLabel=state.admin?'Sair do suporte':'Acesso suporte';
+ const adminAccess=state.admin?`<div class="nav-sep"></div><button class="nav-btn" id="accessBtn">🔐 ${accessLabel}</button>`:'';
+ const html=items.map(i=>`<button class="nav-btn ${state.screen===i[0]?'active':''}" data-nav="${i[0]}"><span>${i[1]}</span>${i[2]}</button>`).join('')+adminAccess;
+ $('#sidebarNav').innerHTML=html;
+ $('#drawerNav').innerHTML=html;
+ $('#bottomNav').innerHTML=items.slice(0,4).map(i=>`<button class="${state.screen===i[0]?'active':''}" data-nav="${i[0]}"><div>${i[1]}</div>${i[2]}</button>`).join('');
+ const reset=$('#resetDemo'); if(reset) reset.classList.toggle('locked-admin-access',!state.admin);
+ const adminBtn=$('#adminLoginBtn'); if(adminBtn) adminBtn.textContent=state.admin?'Sair admin':'Admin';
+}
+function page(title,sub,actions=''){return `<div class="page-head"><div><h1>${title}</h1><p>${sub}</p></div><div class="actions">${actions}</div></div>`}
+function renderAccessGate(){return page('Acessar agenda','Informe seu WhatsApp para visualizar os horários disponíveis.')+`<div class="card" style="max-width:540px"><h2>Identificação do parceiro</h2><p class="meta">Esse passo protege a agenda e permite restringir disponibilidade quando o suporte precisar preservar a operação.</p><form class="form" id="agendaAccessForm"><div class="field"><label>WhatsApp com DDD</label><input id="agendaAccessWhats" inputmode="tel" placeholder="11999999999" required></div><button class="btn primary full" type="submit">Entrar na agenda</button></form></div>`}
+function renderBlockedAgenda(){const b=blockedRecord(state.riderWhats);return page('Sem vagas disponíveis','Não há vagas disponíveis para este WhatsApp neste momento.')+`<div class="blocked-card"><h2>Disponibilidade em análise pelo suporte</h2><p>Por análise operacional, este WhatsApp não possui disponibilidade liberada na agenda digital neste momento.</p><p class="meta">WhatsApp: ${esc(state.riderWhats||'-')}<br>Motivo registrado: ${esc(b?.reason||'Restrição operacional registrada pelo suporte.')}<br>Data: ${esc(b?.blockedAt||'-')}</p><a class="btn primary" target="_blank" rel="noopener" href="${wa(SUPPORT_WA,'Olá, suporte da Osasco Express. Meu acesso à agenda está indisponível e preciso de orientação.')}">Falar com suporte</a><button class="btn ghost" style="margin-left:8px" id="changeWhats" type="button">Trocar WhatsApp</button></div>`}
+function renderAgenda(){
+ if(!state.admin&&!state.riderWhats){$('#screen-agenda').innerHTML=renderAccessGate();updateMobileBar();return;}
+ if(!state.admin&&isBlockedWhats(state.riderWhats)){state.selected.clear();$('#screen-agenda').innerHTML=renderBlockedAgenda();updateMobileBar();return;}
+ const mobileDays=days.map((d,i)=>`<button type="button" class="mobile-day ${state.day===i?'active':''}" data-day="${i}"><span>${d.dow}</span><b>${d.num}</b><span>${d.mon}</span></button>`).join('');
+ const cols=days.map((d,i)=>{const slots=db.slots.filter(s=>s.day===i);return `<div class="day-col ${state.day===i?'mobile-active':''}"><div class="day-head ${i===0?'active':''}"><span class="dow">${d.dow}</span><span class="num">${d.num}</span><span class="mon">${d.mon}</span></div>${slots.map(slotCard).join('')}</div>`}).join('');
+ $('#screen-agenda').innerHTML=page('Agendar horários','Selecione os melhores horários para montar sua semana.','')+`<div class="agenda-layout"><div><div class="mobile-days">${mobileDays}</div><div class="calendar-card"><div class="week-grid">${cols}</div></div></div>${summaryHtml()}</div>`;
+ updateMobileBar();
+}
+function slotCard(s){const selected=state.selected.has(s.id);const st=slotStatus(s);const disabled=st==='soldout'&&!selected;const rem=remaining(s);const badge=selected?'Selecionado':(st==='soldout'?'Sem vaga':`${rem} ${rem===1?'livre':'livres'}`);return `<button type="button" class="slot-card ${selected?'selected':st==='soldout'?'soldout':'available'}" data-slot="${esc(s.id)}" ${disabled?'disabled':''} aria-label="${esc(s.short)} ${esc(s.company)} ${esc(badge)}"><div class="slot-top"><span class="slot-time">${esc(s.short)}</span><span class="slot-check">${selected?'✓':''}</span></div><div class="slot-client" title="${esc(s.company)}">${esc(s.company)}</div><div class="slot-footer"><span class="slot-badge">${esc(badge)}</span><span class="slot-touch">${selected?'Confirmado':'Escolher'}</span></div></button>`}
+function summaryHtml(){const chosen=selectedSlots();return `<aside class="summary-panel"><div class="summary-top"><div><h2>Resumo</h2><p class="meta">${chosen.length? 'Confira e confirme.' : 'Escolha horários livres.'}</p></div><span class="count-pill">${chosen.length}</span></div><div class="chosen-list">${chosen.length?chosen.map(s=>`<div class="chosen-item"><div><b>${s.short}</b><span>${days[s.day].dow} ${days[s.day].num} · ${s.company}</span></div><button class="btn sm" data-remove="${s.id}">Remover</button></div>`).join(''):`<div class="notice blue compact-notice">Selecione um horário disponível.</div>`}</div><button class="btn primary full" id="confirmBtn" ${chosen.length?'':'disabled'}>Confirmar reservas</button><button class="btn ghost full compact-secondary" data-nav="reservas">Minhas reservas</button><div class="notice compact-operational"><b>Combinado:</b> se precisar liberar, reabra pelo sistema.</div></aside>`}
+function updateMobileBar(){const c=selectedSlots().length;$('#mobileCount').textContent=`${c} selecionado${c===1?'':'s'}`;$('#mobileConfirm').disabled=!c;$('#mobileActionbar').style.display=(state.screen==='agenda'&&(!state.riderWhats||isBlockedWhats(state.riderWhats))===false)?'flex':'none';$('#bottomNav').style.display=(state.screen==='agenda')?'none':'';}
+function renderReservations(){
+ const all=db.slots.flatMap(s=>s.reserved.map(r=>({...r,slot:s}))).sort((a,b)=>a.slot.day-b.slot.day);
+ const reservations=state.riderWhats?all.filter(r=>r.whats===state.riderWhats):[];
+ const blocked=state.riderWhats?blockedRecord(state.riderWhats):null;
+ const lookup=`<div class="card" style="max-width:520px"><h2>Consultar minhas reservas</h2><p class="meta">Para proteger os dados dos parceiros, esta tela mostra somente os horários vinculados ao WhatsApp informado.</p><form class="form" id="lookupForm"><div class="field"><label>WhatsApp com DDD</label><input id="lookupWhats" inputmode="tel" placeholder="11999999999" value="${esc(state.riderWhats)}" required></div><button class="btn primary full" type="submit">Ver minhas reservas</button></form></div>`;
+ const body=blocked?`<div class="blocked-card"><h2>Disponibilidade em análise pelo suporte</h2><p class="meta">WhatsApp: ${esc(state.riderWhats)}<br>Motivo: ${esc(blocked.reason)}<br>Data: ${esc(blocked.blockedAt)}</p><a class="btn primary" target="_blank" rel="noopener" href="${wa(SUPPORT_WA,'Olá, suporte da Osasco Express. Meu acesso à agenda está indisponível e preciso de orientação.')}">Falar com suporte</a></div>`:reservations.length?`<div class="privacy-card" style="margin-bottom:12px">Mostrando somente reservas do WhatsApp ${esc(state.riderWhats)}.</div><div class="list">${reservations.map(r=>`<div class="list-item"><div><div class="list-title">${esc(r.slot.short)} · ${esc(r.slot.company)}</div><div class="meta">${esc(days[r.slot.day].full)}<br>${esc(r.name)} · WhatsApp ${esc(r.whats)}<br>Aceite digital: ${r.acceptedTerms?'confirmado':'pendente'} em ${esc(r.acceptedTermsAt||'-')}</div></div><div class="actions"><span class="badge ok">Reservado</span><button class="btn danger sm" data-release="${esc(r.slot.id)}" data-res="${esc(r.id)}">Reabrir horário</button></div></div>`).join('')}</div>`:lookup;
+ $('#screen-reservas').innerHTML=page('Minhas reservas','Consulte apenas os horários vinculados ao seu WhatsApp.')+body;
+}
+function renderSupport(){const msg=`Olá, suporte da Osasco Express. Preciso de ajuda com a agenda operacional.`;$('#screen-suporte').innerHTML=page('Ajuda e suporte','Use os canais oficiais da Osasco Express para resolver dúvidas da agenda.')+`<div class="grid g2"><div class="card"><h2>Suporte e vagas</h2><p class="meta">Para dúvidas de disponibilidade, reservas e reabertura de horários.</p><a class="btn primary full" target="_blank" rel="noopener" href="${wa(SUPPORT_WA,msg)}">Abrir WhatsApp do suporte</a></div><div class="card"><h2>SAC</h2><p class="meta">Atendimento institucional da Osasco Express.</p><a class="btn ghost full" target="_blank" rel="noopener" href="${wa(SAC_WA,'Olá, SAC da Osasco Express. Preciso de atendimento.')}">Abrir SAC</a></div></div>`}
+function renderProfile(){ $('#screen-perfil').innerHTML=page('Perfil','Dados usados apenas para organizar suas reservas na agenda digital.')+`<div class="card"><p class="meta">Ao confirmar reservas, seu nome e WhatsApp ficam vinculados aos horários escolhidos. Você pode reabrir horários pelo sistema quando precisar liberar uma disponibilidade.</p><button class="btn primary" data-nav="agenda">Voltar para agenda</button></div>`}
+function renderAdmin(){if(!state.admin){$('#screen-admin').innerHTML=page('Acesso do suporte','Entre com a senha para abrir o painel administrativo.')+`<div class="card" style="max-width:440px"><form class="form" id="adminLogin"><div class="field"><label>Senha do suporte</label><input id="adminPass" type="password" placeholder="Digite a senha"></div><button class="btn primary full" type="submit">Entrar</button><div class="notice danger" style="margin-top:12px"><b>Área restrita:</b> este painel só aparece no endereço interno do suporte. Protótipo local não substitui segurança de produção: para dados reais, usar backend, login por usuário, banco de dados e regras no servidor.</div></form></div>`;return;}
+ const tabs=['painel','confirmados','empresas','criar','vagas','avisos','parceiros','historico','cliente','inteligencia','config']; const labels={painel:'Painel',confirmados:'Todos confirmados',empresas:'Empresas',criar:'Criar vagas',vagas:'Vagas da semana',avisos:'Avisos críticos',parceiros:'Parceiros',historico:'Histórico',cliente:'Enviar cliente',inteligencia:'Inteligência',config:'Configurações'};
+ $('#screen-admin').innerHTML=page('Suporte / Admin','Painel claro para acompanhar reservas, reaberturas, empresas e avisos críticos.')+`<div class="admin-tabs">${tabs.map(t=>`<button class="btn sm ${state.adminTab===t?'active':''}" data-tab="${t}">${labels[t]}</button>`).join('')}</div><div id="adminBody"></div>`;renderAdminBody();}
+function renderAdminBody(){if(!state.admin)return;const b=$('#adminBody');if(!b)return;const reservations=db.slots.flatMap(s=>s.reserved.map(r=>({...r,slot:s})));const open=db.slots.filter(s=>slotStatus(s)==='available').length;const alerts=db.alerts.filter(a=>!a.done).length;
+ if(state.adminTab==='painel') b.innerHTML=`<div class="grid g3"><div class="card metric"><div class="metric-icon">✅</div><div><b>${reservations.length}</b><span>Confirmados</span></div></div><div class="card metric"><div class="metric-icon">🟢</div><div><b>${open}</b><span>Horários disponíveis</span></div></div><div class="card metric"><div class="metric-icon">🚨</div><div><b>${alerts}</b><span>Avisos críticos</span></div></div></div>`;
+ if(state.adminTab==='confirmados') b.innerHTML=`<div class="table-wrap"><table><thead><tr><th>Empresa</th><th>Dia</th><th>Horário completo</th><th>Parceiro</th><th>WhatsApp</th><th>Aceite</th><th>Ações</th></tr></thead><tbody>${reservations.map(r=>`<tr><td>${r.slot.company}</td><td>${days[r.slot.day].full}</td><td>${r.slot.full}</td><td>${r.name}</td><td>${r.whats}</td><td>${r.acceptedTerms?'Sim':'Não'}</td><td><button class="btn sm danger" data-release="${r.slot.id}" data-res="${r.id}">Reabrir</button></td></tr>`).join('')||'<tr><td colspan="7">Nenhuma reserva confirmada.</td></tr>'}</tbody></table></div>`;
+ if(state.adminTab==='empresas') b.innerHTML=`<div class="notice blue" style="margin-bottom:12px"><b>Fase D2 blindada:</b> empresas agora têm edição real de dados, status e padrão semanal. Use Gerar agenda para criar as disponibilidades sem mexer no código.</div><div class="grid g2">${db.companies.map(c=>{const active=weeklyForCompany(c).filter(w=>w.active&&w.capacity>0).map(w=>`${days[w.day].dow}: ${w.capacity}`).join(' · ')||'sem vagas ativas';return `<div class="card"><h2>${esc(c.name)}</h2><p class="meta">Telefone: ${esc(c.phone||'não cadastrado')}<br>Grupo: ${c.group?esc(c.group):'não cadastrado'}<br>Status: ${esc(c.status)}<br>Padrão: ${esc(active)}</p><div class="row"><button class="btn sm primary" data-edit-company="${esc(c.id)}">Editar dados</button><button class="btn sm ghost" data-generate-company="${esc(c.id)}">Gerar agenda</button></div></div>`}).join('')}</div><div class="card" style="margin-top:14px"><h2>Cadastrar empresa</h2><form class="form" id="companyForm"><div class="row"><div class="field"><label>Nome da empresa</label><input id="coName" required></div><div class="field"><label>Telefone da loja</label><input id="coPhone"></div></div><div class="field"><label>Link do grupo do cliente</label><input id="coGroup" placeholder="https://chat.whatsapp.com/..."></div><div class="field"><label>Observações internas</label><textarea id="coObs"></textarea></div><div class="field"><label>Status</label><select id="coStatus"><option>ativo</option><option>inativo</option></select></div><button class="btn primary">Salvar empresa</button></form></div>`;
+ if(state.adminTab==='criar') b.innerHTML=`<div class="card"><h2>Criar vagas</h2><form class="form" id="slotForm"><div class="row"><div class="field"><label>Empresa</label><select id="slotCompany">${db.companies.map(c=>`<option value="${c.id}">${c.name}</option>`).join('')}</select></div><div class="field"><label>Dia</label><select id="slotDay">${days.map((d,i)=>`<option value="${i}">${d.full}</option>`).join('')}</select></div></div><div class="row"><div class="field"><label>Horário resumido do card</label><input id="slotShort" placeholder="18H - 00H" required></div><div class="field"><label>Horário completo interno</label><input id="slotFull" placeholder="18:00 às 00:30" required></div></div><div class="field"><label>Quantidade de vagas</label><input id="slotCap" type="number" min="1" value="1"></div><button class="btn primary">Criar horário</button></form></div>`;
+ if(state.adminTab==='vagas') b.innerHTML=`<div class="card" style="margin-bottom:12px"><div class="row"><button class="btn primary full" id="generateWeek" type="button">Gerar agenda da semana</button><button class="btn ghost full" id="copyOperationalSummary" type="button">Copiar resumo operacional</button></div><p class="meta">A geração usa apenas empresas ativas, ignora dias com 0 vaga e não duplica cliente/dia/horário.</p></div><div class="list">${db.slots.map(s=>`<div class="list-item"><div><div class="list-title">${days[s.day].dow} ${days[s.day].num} · ${esc(s.short)} · ${esc(s.company)}</div><div class="meta">Completo: ${esc(s.full)} · Reservas: ${s.reserved.length}/${s.capacity} · Livres: ${remaining(s)}</div></div><div class="actions"><span class="badge ${slotStatus(s)==='available'?'ok':'warn'}">${slotStatus(s)==='available'?'Disponível':'Sem vaga'}</span><button class="btn sm" data-edit-slot="${esc(s.id)}">Editar</button><button class="btn sm danger" data-delete-slot="${esc(s.id)}">Excluir</button></div></div>`).join('')}</div>`;
+ if(state.adminTab==='avisos') b.innerHTML=`<div class="list">${db.alerts.length?db.alerts.map(a=>`<div class="list-item critical"><div><div class="list-title">${a.title}</div><div class="meta">${a.body.replace(/\n/g,'<br>')}<br>Gerado em: ${a.createdAt}</div></div><div class="actions"><a class="btn sm primary" target="_blank" rel="noopener" href="${wa(SUPPORT_WA,a.body)}">Abrir WhatsApp</a><button class="btn sm" data-alert-done="${a.id}">${a.done?'Tratado':'Marcar tratado'}</button></div></div>`).join(''):`<div class="card"><h2>Nenhum aviso crítico.</h2><p class="meta">Quando um horário for reaberto, o alerta aparece aqui.</p></div>`}</div>`;
+ if(state.adminTab==='parceiros'){const people={};reservations.forEach(r=>{people[r.whats]={name:r.name,whats:r.whats,lastSlot:`${r.slot.company} · ${r.slot.short}`}});(db.blockedPartners||[]).forEach(bk=>{if(!people[bk.whats])people[bk.whats]={name:bk.name||'Parceiro sem reserva ativa',whats:bk.whats,lastSlot:'Sem reserva ativa'}});const rows=Object.values(people).sort((a,b)=>a.name.localeCompare(b.name)); b.innerHTML=`<div class="card" style="margin-bottom:14px"><h2>Restringir disponibilidade do parceiro</h2><p class="meta">Use quando o suporte precisar impedir que um WhatsApp visualize a agenda, confirme reservas ou acesse horários.</p><form class="form" id="blockForm"><div class="row"><div class="field"><label>Nome do parceiro</label><input id="blockName" placeholder="Opcional"></div><div class="field"><label>WhatsApp com DDD</label><input id="blockWhats" inputmode="tel" required placeholder="11999999999"></div></div><div class="field"><label>Motivo operacional interno</label><input id="blockReason" value="Restrição operacional registrada pelo suporte."></div><button class="btn danger" type="submit">Restringir disponibilidade na agenda</button></form></div><div class="list">${rows.map(p=>{const bk=blockedRecord(p.whats);return `<div class="list-item ${bk?'critical':''}"><div><div class="list-title">${esc(p.name)}</div><div class="meta">WhatsApp: ${esc(p.whats)}<br>Última referência: ${esc(p.lastSlot)}${bk?`<br>Restrição registrada em: ${esc(bk.blockedAt)}<br>Motivo: ${esc(bk.reason)}`:''}</div></div><div class="actions"><span class="badge ${bk?'danger':'ok'}"><span class="status-dot ${bk?'blocked':''}"></span>${bk?'Em análise':'Ativo'}</span>${bk?`<button class="btn sm green" data-unblock-whats="${esc(p.whats)}">Liberar disponibilidade</button>`:`<button class="btn sm danger" data-block-whats="${esc(p.whats)}" data-block-name="${esc(p.name)}">Restringir</button>`}</div></div>`}).join('')||'<div class="card">Nenhum parceiro com reserva ou restrição operacional.</div>'}</div>`}
+ if(state.adminTab==='historico') b.innerHTML=`<div class="list">${db.history.slice().reverse().map(h=>`<div class="list-item"><div><div class="list-title">${h.type}</div><div class="meta">${h.text}<br>${h.at}</div></div></div>`).join('')||'<div class="card">Histórico vazio.</div>'}</div>`;
+ if(state.adminTab==='cliente') b.innerHTML=`<div class="grid g2">${db.companies.map(c=>`<div class="card"><h2>${c.name}</h2><p class="meta">Use quando a agenda estiver preenchida ou para envio manual da parcial.</p><div class="row"><button class="btn primary full" data-copy-company="${c.id}">Copiar agenda</button>${c.group?`<a class="btn ghost full" target="_blank" href="${c.group}">Abrir grupo</a>`:`<button class="btn ghost full" disabled>Grupo não cadastrado</button>`}</div>${c.group?'':'<div class="notice blue" style="margin-top:10px">Grupo do cliente não cadastrado. Cadastre no perfil da empresa para agilizar o envio.</div>'}</div>`).join('')}</div>`;
+ if(state.adminTab==='inteligencia'){const byDay=days.map((d,i)=>({d,total:db.slots.filter(s=>s.day===i).reduce((a,s)=>a+(parseInt(s.capacity,10)||0),0),used:db.slots.filter(s=>s.day===i).reduce((a,s)=>a+s.reserved.length,0)}));const byCo=db.companies.map(c=>({c,total:db.slots.filter(s=>s.companyId===c.id).reduce((a,s)=>a+(parseInt(s.capacity,10)||0),0),used:db.slots.filter(s=>s.companyId===c.id).reduce((a,s)=>a+s.reserved.length,0)}));b.innerHTML=`<div class="grid g2"><div class="card"><h2>Ocupação por dia</h2>${byDay.map(x=>`<p class="meta"><b>${x.d.dow}</b>: ${x.used}/${x.total} reservas · ${x.total?Math.round((x.used/x.total)*100):0}% ocupado</p>`).join('')}</div><div class="card"><h2>Ocupação por cliente</h2>${byCo.map(x=>`<p class="meta"><b>${esc(x.c.name)}</b>: ${x.used}/${x.total} reservas · ${x.total?Math.round((x.used/x.total)*100):0}% ocupado</p>`).join('')}</div></div><div class="card" style="margin-top:12px"><h2>Leitura operacional D2</h2><p class="meta">A próxima inteligência científica deve cruzar: dia, cliente, horário, ocupação, reabertura, restrição operacional, fila de espera, atrasos manuais e recorrência de parceiro. Este protótipo já prepara o histórico para essa evolução.</p></div>`;}
+ if(state.adminTab==='config') b.innerHTML=`<div class="card"><h2>Configurações da operação</h2><form class="form" id="settingsForm"><div class="row"><div class="field"><label>WhatsApp de Suporte e Vagas</label><input id="setSupport" value="${db.settings.support}"></div><div class="field"><label>WhatsApp SAC</label><input id="setSac" value="${db.settings.sac}"></div></div><div class="notice blue">Padrão oficial: Suporte e vagas 11924782555 · SAC 11986661784.</div><button class="btn primary">Salvar configurações</button></form></div>`;
+}
+function setScreen(name){
+ if(name==='admin'&&!state.admin){
+   state.screen='admin';
+   $$('.screen').forEach(x=>x.classList.remove('active'));
+   $('#screen-admin').classList.add('active');
+   $('#drawer').classList.remove('open');
+   renderAll();
+   return;
+ }
+ state.screen=name;
+ $$('.screen').forEach(x=>x.classList.remove('active'));
+ const target=$(`#screen-${name}`);
+ if(target) target.classList.add('active');
+ $('#drawer').classList.remove('open');
+ renderAll();
+}
+window.addEventListener('hashchange',()=>{if(adminRouteOpen()&&!state.admin){setScreen('admin')}else renderNav();});
+function renderAll(){renderNav();renderAgenda();renderReservations();renderSupport();renderProfile();renderAdmin();$$('[data-nav]').forEach(el=>el.onclick=()=>setScreen(el.dataset.nav));updateMobileBar();}
+function openConfirm(){if(!selectedSlots().length)return;$('#confirmChosen').innerHTML=selectedSlots().map(s=>`<div class="chosen-item"><div><b>${s.short}</b><span>${days[s.day].full} · ${s.company}</span></div></div>`).join('');openModal('#confirmModal');}
+
+function openCompanyEditor(id){if(!requireAdmin())return;const c=db.companies.find(x=>x.id===id);if(!c)return toast('Empresa não encontrada.');$('#editCompanyId').value=c.id;$('#editCompanyName').value=c.name;$('#editCompanyPhone').value=c.phone||'';$('#editCompanyGroup').value=c.group||'';$('#editCompanyObs').value=c.obs||'';$('#editCompanyStatus').value=c.status||'ativo';$('#editCompanyStart').value=c.start||'';$('#editCompanyEnd').value=c.end||'';$('#weeklyEditor').innerHTML=weeklyForCompany(c).map(w=>`<div class="weekly-grid"><div class="field"><label>Dia</label><input value="${days[w.day].full}" disabled></div><div class="field"><label>Vagas</label><input data-week-cap="${w.day}" type="number" min="0" max="50" value="${w.capacity}"></div><div class="field"><label>Entrada</label><input data-week-start="${w.day}" value="${esc(w.start||'')}"></div><div class="field"><label>Saída</label><input data-week-end="${w.day}" value="${esc(w.end||'')}"></div><div class="field"><label>Ativo</label><select data-week-active="${w.day}"><option value="true" ${w.active?'selected':''}>sim</option><option value="false" ${!w.active?'selected':''}>não</option></select></div></div>`).join('');openModal('#companyModal');}
+function saveCompanyEditor(e){e.preventDefault();if(!requireAdmin())return;const id=$('#editCompanyId').value;const c=db.companies.find(x=>x.id===id);if(!c)return;const oldName=c.name;c.name=cleanText($('#editCompanyName').value,70)||c.name;c.phone=cleanPhone($('#editCompanyPhone').value);c.group=safeGroupUrl($('#editCompanyGroup').value);c.obs=cleanText($('#editCompanyObs').value,180);c.status=$('#editCompanyStatus').value==='inativo'?'inativo':'ativo';c.start=cleanText($('#editCompanyStart').value,12);c.end=cleanText($('#editCompanyEnd').value,12);c.weekly=days.map((d,i)=>{const cap=Math.max(0,Math.min(50,parseInt(document.querySelector(`[data-week-cap="${i}"]`)?.value,10)||0));const start=cleanText(document.querySelector(`[data-week-start="${i}"]`)?.value,12);const end=cleanText(document.querySelector(`[data-week-end="${i}"]`)?.value,12);return {day:i,active:document.querySelector(`[data-week-active="${i}"]`)?.value==='true',capacity:cap,start,end,short:(start&&end?`${start} - ${end}`:(c.start&&c.end?`${c.start} - ${c.end}`:'A DEFINIR')).toUpperCase(),full:(start&&end?`${start} às ${end}`:(c.start&&c.end?`${c.start} às ${c.end}`:'Horário a definir'))};});updateSlotsCompanyData(c);db.history.push({type:'Empresa editada',text:`${oldName} atualizado para ${c.name}. Status: ${c.status}.`,at:now()});save();closeModals();renderAll();toast('Empresa atualizada com segurança.');}
+function editSlot(id){if(!requireAdmin())return;const s=db.slots.find(x=>x.id===id);if(!s)return;const cap=prompt('Nova quantidade de vagas/capacidade:',s.capacity);if(cap===null)return;const short=prompt('Horário resumido do card:',s.short);if(short===null)return;const full=prompt('Horário completo:',s.full);if(full===null)return;s.capacity=Math.max(s.reserved.length,Math.min(50,parseInt(cap,10)||s.capacity));s.short=cleanText(short,18).toUpperCase();s.full=cleanText(full,40);s.status='available';db.history.push({type:'Vaga editada',text:`${s.company} ${days[s.day].dow} ${s.short}: capacidade ${s.capacity}.`,at:now()});save();renderAdminBody();renderAgenda();toast('Disponibilidade atualizada.');}
+function deleteSlot(id){if(!requireAdmin())return;const idx=db.slots.findIndex(x=>x.id===id);if(idx<0)return;const s=db.slots[idx];const strong=s.reserved.length?`EXCLUIR ${s.reserved.length} RESERVA`:'EXCLUIR';const typed=prompt(`Confirma excluir ${s.company} ${days[s.day].dow} ${s.short}? Digite: ${strong}`);if(typed!==strong)return toast('Exclusão cancelada.');db.slots.splice(idx,1);db.history.push({type:'Disponibilidade excluída',text:`${s.company} ${days[s.day].dow} ${s.short} removida. Reservas afetadas: ${s.reserved.length}.`,at:now()});save();renderAll();toast('Disponibilidade excluída com registro.');}
+function generateCompany(companyId){if(!requireAdmin())return;const c=db.companies.find(x=>x.id===companyId);if(!c)return;let created=0;weeklyForCompany(c).forEach(p=>created+=upsertSlotFromPattern(c,p));db.history.push({type:'Agenda gerada por cliente',text:`${c.name}: ${created} disponibilidade(s) criadas pelo padrão semanal.`,at:now()});save();renderAll();toast(`${c.name}: ${created} nova(s) disponibilidade(s).`)}
+function copyOperationalSummary(){if(!requireAdmin())return;const msg=db.companies.map(c=>companyMessage(c.id)).join('\n\n---\n\n');navigator.clipboard?.writeText(msg);toast('Resumo operacional copiado.');}
+function openModal(id){$(id).classList.add('open')}function closeModals(){$$('.modal').forEach(m=>m.classList.remove('open'));state.releaseId=null;}
+function reserve(e){e.preventDefault();const first=cleanText($('#firstName').value,40), last=cleanText($('#lastName').value,40), whats=cleanPhone($('#whats').value);if(first.length<2||last.length<2)return toast('Informe nome e sobrenome.');if(whats.length<10||whats.length>13)return toast('Informe um WhatsApp válido com DDD.');if(isBlockedWhats(whats))return toast('Este WhatsApp não possui acesso ativo à agenda. Fale com o suporte.');if(!$('#terms').checked)return toast('Confirme o aceite digital.');const batch='OE-'+uid();let confirmed=0, full=0, duplicated=0;selectedSlots().forEach(s=>{if(remaining(s)<=0){full++;return;}if(s.reserved.some(r=>r.whats===whats)){duplicated++;return;}s.reserved.push({id:uid(),name:`${first} ${last}`,first,last,whats,acceptedTerms:true,acceptedTermsAt:now(),acceptedTermsVersion:TERMS_VERSION,acceptedTermsText:TERMS_TEXT,privacyVersion:PRIVACY_VERSION,reservationBatchId:batch,reservationSource:'agenda-digital'});confirmed++;db.history.push({type:'Reserva confirmada',text:`${first} ${last} confirmou ${s.short} em ${s.company}. ${remaining(s)} vaga(s) restante(s).`,at:now()});});if(confirmed){state.riderWhats=whats;localStorage.setItem('oeAgendaFaseD2_rider_whats',whats);}state.selected.clear();save();closeModals();renderAll();if(confirmed){setScreen('reservas');toast(`${confirmed} reserva(s) confirmada(s).`);}else if(full){toast('Esses horários foram preenchidos antes da confirmação.');}else if(duplicated){toast('Esse WhatsApp já está reservado nesses horários.');}}
+function openRelease(slotId,resId){const s=db.slots.find(x=>x.id===slotId);if(!s)return;const r=s.reserved.find(x=>x.id===resId)||s.reserved[0];if(!state.admin&&(!r||r.whats!==state.riderWhats))return toast('Por segurança, consulte suas reservas pelo seu WhatsApp.');state.releaseId={slotId,resId:r?.id};$('#releaseDetails').innerHTML=`<h2>${s.company}</h2><p class="meta">${days[s.day].full}<br><b>${s.full}</b><br>Parceiro: ${r?.name||'-'} · WhatsApp: ${r?.whats||'-'}</p>`;$('#releaseNote').value='';openModal('#releaseModal');}
+function doRelease(){const rel=state.releaseId;if(!rel)return;const s=db.slots.find(x=>x.id===rel.slotId);if(!s)return;const idx=s.reserved.findIndex(r=>r.id===rel.resId);const r=s.reserved[idx]||s.reserved[0];if(!r)return;if(!state.admin&&r.whats!==state.riderWhats)return toast('Por segurança, apenas o próprio WhatsApp pode reabrir esta reserva.');const note=$('#releaseNote').value.trim()||'Sem recado';s.reserved.splice(idx>=0?idx:0,1);const msg=`Osasco Express — Horário reaberto\n\nParceiro: ${r.name}\nWhatsApp: ${r.whats}\nCliente: ${s.company}\nDia: ${days[s.day].full}\nHorário: ${s.full}\nRecado: ${note}\n\nO horário foi reaberto pelo sistema e voltou para a agenda.\nSuporte avisado pela agenda digital.`;db.alerts.push({id:uid(),title:'Horário reaberto',body:msg,createdAt:now(),done:false});db.history.push({type:'Horário reaberto',text:`${r.name} reabriu ${s.short} em ${s.company}. Recado: ${note}`,at:now()});save();closeModals();renderAll();toast('Horário reaberto. Suporte avisado pelo WhatsApp.');window.open(wa(SUPPORT_WA,msg),'_blank','noopener');}
+function companyMessage(companyId){const c=db.companies.find(x=>x.id===companyId);const rows=db.slots.filter(s=>s.companyId===companyId&&s.reserved.length).sort((a,b)=>a.day-b.day).map(s=>`${days[s.day].dow} ${days[s.day].num}/${s.short} — ${s.reserved.map(r=>r.name).join(', ')}`);return `Osasco Express — Agenda operacional\nCliente: ${c.name}\n\n${rows.length?rows.join('\n'):'Ainda não há reservas confirmadas para este cliente.'}\n\nMensagem gerada pela agenda digital da Osasco Express.`;}
+function openCopy(companyId){const c=db.companies.find(x=>x.id===companyId);$('#copyTitle').textContent=`Agenda para ${c.name}`;$('#copyText').textContent=companyMessage(companyId);openModal('#copyModal');}
+function handleClick(e){const t=e.target.closest('button,a');if(!t)return;if(t.dataset.slot){const s=db.slots.find(x=>x.id===t.dataset.slot);if(!s||slotStatus(s)==='soldout')return;if(state.selected.has(s.id))state.selected.delete(s.id);else state.selected.add(s.id);renderAll();return;}if(t.dataset.day){state.day=+t.dataset.day;renderAll();return;}if(t.dataset.remove){state.selected.delete(t.dataset.remove);renderAll();return;}if(t.id==='confirmBtn'||t.id==='mobileConfirm'){openConfirm();return;}if(t.dataset.closeModal!==undefined){closeModals();return;}if(t.dataset.release){openRelease(t.dataset.release,t.dataset.res);return;}if(t.id==='doRelease'){doRelease();return;}if(t.dataset.tab){if(!state.admin)return toast('Ação restrita ao suporte.');state.adminTab=t.dataset.tab;renderAdmin();return;}if(t.dataset.alertDone){if(!state.admin)return toast('Ação restrita ao suporte.');const a=db.alerts.find(x=>x.id===t.dataset.alertDone);if(a){a.done=true;save();renderAdminBody();toast('Aviso marcado como tratado.')}return;}if(t.dataset.copyCompany){if(!state.admin)return toast('Ação restrita ao suporte.');openCopy(t.dataset.copyCompany);return;}if(t.id==='copyNow'){if(!state.admin)return toast('Ação restrita ao suporte.');navigator.clipboard?.writeText($('#copyText').textContent);toast('Agenda copiada.');return;}if(t.id==='openMenu'){ $('#drawer').classList.add('open');return;}if(t.dataset.closeDrawer!==undefined){$('#drawer').classList.remove('open');return;}if(t.id==='adminLoginBtn'){if(state.admin){state.admin=false;location.hash='';setScreen('agenda');toast('Saiu do modo administrador.');}else{setScreen('admin');}return;}if(t.id==='changeWhats'){state.riderWhats='';localStorage.removeItem('oeAgendaFaseD2_rider_whats');state.selected.clear();setScreen('agenda');return;}if(t.dataset.blockWhats){if(!state.admin)return toast('Ação restrita ao suporte.');const w=cleanPhone(t.dataset.blockWhats);if(!w)return;const existing=(db.blockedPartners||[]).find(b=>b.whats===w);if(existing){existing.status='blocked';existing.blockedAt=now();existing.reason=existing.reason||'Restrição operacional registrada pelo suporte.';}else{(db.blockedPartners||(db.blockedPartners=[])).push({id:uid(),name:cleanText(t.dataset.blockName||'',90),whats:w,reason:'Restrição operacional registrada pelo suporte.',blockedAt:now(),status:'blocked'});}db.history.push({type:'Acesso em análise',text:`WhatsApp ${w} em análise pelo suporte.`,at:now()});save();renderAdminBody();toast('Acesso à agenda em análise.');return;}if(t.dataset.unblockWhats){if(!state.admin)return toast('Ação restrita ao suporte.');const w=cleanPhone(t.dataset.unblockWhats);const bk=(db.blockedPartners||[]).find(b=>b.whats===w);if(bk){bk.status='released';db.history.push({type:'Disponibilidade liberada',text:`WhatsApp ${w} liberado pelo suporte.`,at:now()});save();renderAdminBody();toast('Disponibilidade liberada.');}return;}if(t.dataset.editCompany){openCompanyEditor(t.dataset.editCompany);return;}if(t.dataset.generateCompany){generateCompany(t.dataset.generateCompany);return;}if(t.dataset.editSlot){editSlot(t.dataset.editSlot);return;}if(t.dataset.deleteSlot){deleteSlot(t.dataset.deleteSlot);return;}if(t.id==='generateWeek'){generateWeekFromPatterns();return;}if(t.id==='copyOperationalSummary'){copyOperationalSummary();return;}if(t.id==='topSupport'){setScreen('suporte');return;}if(t.id==='resetDemo'){if(!state.admin)return toast('Limpeza da demo disponível somente no modo suporte.');if(confirm('Limpar dados da demo neste navegador?')){localStorage.removeItem(STORAGE_KEY);location.reload();}return;}if(t.id==='accessBtn'){if(state.admin){state.admin=false;location.hash='';setScreen('agenda');toast('Saiu do modo administrador.');}else{setScreen('admin');}return;}}
+function handleSubmit(e){if(e.target.id==='agendaAccessForm'){e.preventDefault();const w=cleanPhone($('#agendaAccessWhats').value);if(w.length<10||w.length>13)return toast('Informe um WhatsApp válido com DDD.');state.riderWhats=w;localStorage.setItem('oeAgendaFaseD2_rider_whats',w);state.selected.clear();renderAll();toast(isBlockedWhats(w)?'Não há vagas disponíveis para este WhatsApp neste momento. Fale com o suporte.':'Agenda liberada.');return;}if(e.target.id==='lookupForm'){e.preventDefault();const w=cleanPhone($('#lookupWhats').value);if(w.length<10||w.length>13)return toast('Informe um WhatsApp válido com DDD.');state.riderWhats=w;localStorage.setItem('oeAgendaFaseD2_rider_whats',w);renderReservations();toast(isBlockedWhats(w)?'Não há vagas disponíveis para este WhatsApp neste momento. Fale com o suporte.':'Consulta atualizada.');return;}if(e.target.id==='confirmForm')reserve(e);if(e.target.id==='adminLogin'){e.preventDefault();if($('#adminPass').value==='1234'){state.admin=true;renderAll();toast('Acesso administrativo liberado.')}else toast('Senha inválida.')}if(e.target.id==='blockForm'){e.preventDefault();if(!state.admin)return toast('Ação restrita ao suporte.');const w=cleanPhone($('#blockWhats').value);if(w.length<10||w.length>13)return toast('Informe um WhatsApp válido com DDD.');const existing=(db.blockedPartners||[]).find(b=>b.whats===w);const name=cleanText($('#blockName').value,90);const reason=cleanText($('#blockReason').value,180)||'Restrição operacional registrada pelo suporte.';if(existing){existing.name=name||existing.name;existing.reason=reason;existing.blockedAt=now();existing.status='blocked';}else{(db.blockedPartners||(db.blockedPartners=[])).push({id:uid(),name,whats:w,reason,blockedAt:now(),status:'blocked'});}db.history.push({type:'Acesso em análise',text:`${name||'Parceiro'} (${w}) em análise para acessar a agenda. Motivo: ${reason}`,at:now()});save();renderAdminBody();toast('Parceiro em análise para acessar a agenda.');return;}if(e.target.id==='companyEditForm'){saveCompanyEditor(e);return;}if(e.target.id==='companyForm'){e.preventDefault();if(!state.admin)return toast('Ação restrita ao suporte.');const id='co'+uid();db.companies.push({id,name:cleanText($('#coName').value,70),phone:cleanPhone($('#coPhone').value),group:safeGroupUrl($('#coGroup').value),obs:cleanText($('#coObs').value,180),status:$('#coStatus').value==='inativo'?'inativo':'ativo',start:'',end:'',weekly:defaultWeekly(id)});db.history.push({type:'Empresa cadastrada',text:`${cleanText($('#coName').value,70)} cadastrada no admin.`,at:now()});save();renderAdmin();toast('Empresa salva.')}if(e.target.id==='slotForm'){e.preventDefault();if(!state.admin)return toast('Ação restrita ao suporte.');const cid=$('#slotCompany').value,c=db.companies.find(x=>x.id===cid);db.slots.push({id:uid(),day:+$('#slotDay').value,short:cleanText($('#slotShort').value,18).toUpperCase(),full:cleanText($('#slotFull').value,40),company:c.name,companyId:c.id,capacity:Math.max(1,Math.min(50,parseInt($('#slotCap').value,10)||1)),reserved:[],status:'available'});save();renderAdmin();toast('Horário criado.')}if(e.target.id==='settingsForm'){e.preventDefault();if(!state.admin)return toast('Ação restrita ao suporte.');db.settings.support=cleanPhone($('#setSupport').value);db.settings.sac=cleanPhone($('#setSac').value);save();toast('Configurações salvas.')}}
+document.addEventListener('click',handleClick);document.addEventListener('submit',handleSubmit);document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModals();$('#drawer').classList.remove('open')}});$$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModals()}));$('#drawer').addEventListener('click',e=>{if(e.target===$('#drawer'))$('#drawer').classList.remove('open')});
+if(adminRouteOpen()){setScreen('admin');}else{renderAll();}
+})();
+</script>
+</body>
+</html>
