@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Proposta Comercial | BARTÔ Rock & Comedy × Osasco Express</title>
+<meta name="description" content="Andrea, o BARTÔ não perde venda por falta de entregador. A Osasco Express organiza a operação de delivery com parceiros autônomos, agenda combinada e fechamento claro." />
+<meta name="theme-color" content="#0b0b0b" />
+<meta property="og:title" content="BARTÔ × Osasco Express | Delivery que roda sem você resolver" />
+<meta property="og:description" content="Entregador sumindo na hora do rush não é azar. É operação sem estrutura. Essa proposta resolve isso." />
+<meta property="og:image" content="assets/og-barto.jpg" />
+<link rel="preload" href="assets/hero-barto-primeira-dobra.png" as="image" />
+<style>
+:root{
+  --black:#171211;--black2:#241c1a;--paper:#f7f1e7;--white:#fff;--ink:#1f1815;
+  --muted:#6b6258;--line:#e4d6c3;--red:#a51f29;--red2:#7d171f;--gold:#c89b42;
+  --soft:#fffaf2;--cream:#fff7ea;--radius:24px;--max:1160px;
+  --shadow:0 16px 42px rgba(61,38,25,.09);
+  --font-display:Arial, Helvetica, sans-serif;
+  --font-body:Arial, Helvetica, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial, Helvetica, sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto;display:block}
+.wrap{width:min(100%,var(--max));margin:0 auto;padding:0 22px}
+.section{padding:80px 0}
+.section-tight{padding:56px 0}
+
+.eyebrow{display:inline-flex;gap:10px;align-items:center;margin-bottom:14px;color:var(--red);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;font-family:var(--font-body)}
+.eyebrow:before{content:"";width:24px;height:2px;background:currentColor;border-radius:99px}
+.eyebrow-light{color:rgba(255,255,255,.6)}
+.eyebrow-light:before{background:rgba(255,255,255,.6)}
+
+.title{font-family:var(--font-display);font-size:clamp(28px,3.8vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:900;margin-bottom:16px;text-wrap:balance}
+.title em{font-style:normal;color:var(--red)}
+.lead{max-width:760px;color:var(--muted);font-size:15.5px;line-height:1.88}
+.dark .lead{color:rgba(255,255,255,.7)}
+strong{font-weight:700;color:inherit}
+
+.topbar{position:sticky;top:0;z-index:20;background:rgba(247,241,231,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.09)}
+.topbar-inner{min-height:62px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.02em;font-size:14px}
+.brand-logo{width:36px;height:36px;border-radius:50%;background:#171211;overflow:hidden;display:grid;place-items:center}
+.brand-logo img{width:100%;height:100%;object-fit:contain;padding:3px}
+.brand span{color:var(--red)}
+.nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.nav a{font-size:12px;font-weight:700;color:#45413b;padding:7px 12px;border-radius:999px;border:1px solid transparent;transition:.15s}
+.nav a:hover{background:#fff;border-color:var(--line)}
+.nav .primary{background:var(--red);color:#fff;border-color:var(--red)}
+.nav .primary:hover{background:var(--red2);border-color:var(--red2)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;padding:15px 28px;font-weight:800;font-size:14px;text-align:center;transition:.18s;letter-spacing:.01em}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--red);color:#fff;box-shadow:0 14px 34px rgba(183,25,36,.28)}
+.btn-primary:hover{background:var(--red2);box-shadow:0 18px 40px rgba(183,25,36,.34)}
+.btn-secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.22)}
+.btn-secondary:hover{background:rgba(255,255,255,.2)}
+.btn-dark{background:#fff;color:#111;font-weight:900}
+.btn-dark:hover{background:#f0ece4}
+
+.hero{position:relative;color:#fff;background:linear-gradient(90deg,rgba(24,15,12,.92) 0%,rgba(35,22,18,.78) 42%,rgba(35,22,18,.45) 76%,rgba(35,22,18,.22) 100%),url('assets/hero-barto-primeira-dobra.png') center/cover no-repeat}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--red),var(--gold),transparent)}
+.hero .wrap{min-height:640px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.72fr);gap:40px;align-items:center;padding-top:76px;padding-bottom:76px;position:relative;z-index:1}
+
+.hero-badge{display:inline-flex;margin-bottom:20px;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);font-size:10.5px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+
+.hero h1{font-family:var(--font-display);max-width:740px;font-size:clamp(36px,5vw,60px);line-height:1.03;letter-spacing:-.03em;font-weight:900;text-wrap:balance}
+.hero h1 em{font-style:normal;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:.12em;text-decoration-thickness:.07em}
+
+.hero-lead{max-width:680px;margin:22px 0 20px;color:rgba(255,255,255,.84);font-size:16.5px;line-height:1.86}
+
+.hero-insight{max-width:640px;margin-bottom:26px;padding:16px 20px;border-radius:18px;border-left:4px solid var(--red);background:rgba(255,255,255,.09);border-top:1px solid rgba(255,255,255,.14);border-right:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);font-size:14.5px;color:rgba(255,255,255,.9);line-height:1.72}
+.hero-insight strong{color:#fff}
+
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.hero-micro{font-size:12px;color:rgba(255,255,255,.5);margin-top:10px}
+
+.hero-card{padding:24px;border-radius:28px;background:rgba(40,28,24,.74);border:1px solid rgba(255,255,255,.16);box-shadow:0 28px 70px rgba(30,16,10,.32);backdrop-filter:blur(14px)}
+.hero-card small{display:inline-flex;margin-bottom:14px;padding:7px 11px;border-radius:999px;background:rgba(200,155,66,.13);border:1px solid rgba(200,155,66,.22);color:#f0cc79;font-size:9.5px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+.hero-card h2{font-family:var(--font-display);font-size:23px;line-height:1.1;letter-spacing:-.02em;margin-bottom:8px}
+.hero-card p{font-size:13.5px;line-height:1.75;color:rgba(255,255,255,.7);margin-bottom:16px}
+.mini-list{display:grid;gap:10px}
+.mini{padding:13px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11)}
+.mini b{display:block;font-size:13.5px;margin-bottom:3px;color:#fff}
+.mini span{display:block;font-size:12px;line-height:1.5;color:rgba(255,255,255,.6)}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.cards{display:grid;gap:14px}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-4{grid-template-columns:repeat(4,1fr)}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 12px 28px rgba(61,38,25,.055)}
+.card h3{font-family:var(--font-display);font-size:19px;line-height:1.2;letter-spacing:-.01em;margin-bottom:8px}
+.card p{font-size:13.5px;color:var(--muted);line-height:1.75}
+.icon{width:44px;height:44px;border-radius:14px;background:#fff0f1;color:var(--red);display:grid;place-items:center;font-size:20px;margin-bottom:14px}
+
+.dark{background:#261b18;color:#fff}
+.dark .card{background:#2c211e;border-color:rgba(255,255,255,.11);box-shadow:none}
+.dark .card p{color:rgba(255,255,255,.66)}
+.dark .card h3{color:#fff}
+
+.pain-section{background:#261b18;color:#fff;position:relative;overflow:hidden}
+.pain-section:before{content:"";position:absolute;top:-60px;right:-60px;width:360px;height:360px;background:radial-gradient(circle,rgba(183,25,36,.18) 0%,transparent 70%);pointer-events:none}
+.pain-quote{font-family:var(--font-display);font-size:clamp(26px,3.5vw,44px);line-height:1.18;letter-spacing:-.02em;font-weight:700;font-style:normal;color:#fff;max-width:820px;margin-bottom:28px;position:relative;padding-left:14px}
+.pain-quote:before{content:"\201C";font-size:120px;color:var(--red);opacity:.26;position:absolute;top:-36px;left:-16px;font-family:var(--font-display);line-height:1}
+.pain-items{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.pain-item{border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:22px;background:rgba(255,255,255,.04);position:relative;overflow:hidden}
+.pain-item:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--red)}
+.pain-num{font-family:var(--font-display);font-size:52px;font-weight:900;color:var(--red);opacity:.22;line-height:1;margin-bottom:6px}
+.pain-item h3{font-size:17px;font-weight:700;margin-bottom:7px}
+.pain-item p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7}
+
+.method{background:#fff}
+.method-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
+.method-item{display:flex;gap:16px;background:var(--soft);border:1px solid var(--line);border-radius:22px;padding:22px}
+.num{flex:0 0 40px;width:40px;height:40px;border-radius:14px;background:#261b18;color:#fff;display:grid;place-items:center;font-weight:900;font-family:var(--font-body);font-size:15px}
+.method-item h3{font-family:var(--font-display);font-size:19px;line-height:1.2;margin-bottom:6px}
+.method-item p{font-size:13.5px;color:var(--muted);line-height:1.72}
+
+.proof{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.proof-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 8px 24px rgba(0,0,0,.05)}
+.proof-icon{width:48px;height:48px;border-radius:16px;background:#f0fff4;color:#2d7a47;display:grid;place-items:center;font-size:22px;margin-bottom:14px;border:1px solid #c8e6d0}
+.proof-card h3{font-family:var(--font-display);font-size:18px;margin-bottom:8px}
+.proof-card p{font-size:13.5px;color:var(--muted);line-height:1.75}
+
+.photo-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+.photo-frame{border-radius:20px;overflow:hidden}
+.photo-frame img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.caption{padding:15px 4px 2px;color:var(--muted);font-size:13.5px;line-height:1.7}
+.caption strong{color:var(--ink)}
+
+.security{background:#261b18;color:#fff}
+.security-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+.security-card{border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:20px;background:rgba(255,255,255,.05)}
+.security-card h3{font-size:16px;margin-bottom:7px;font-weight:700}
+.security-card p{font-size:13px;line-height:1.62;color:rgba(255,255,255,.66)}
+
+.pricing{background:#fff}
+.pricing-panel{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:hidden}
+.pricing-head{padding:26px 28px;background:#261b18;color:#fff;position:relative;overflow:hidden}
+.pricing-head:after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--gold),transparent)}
+.pricing-head small{display:block;color:rgba(255,255,255,.5);font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:900;margin-bottom:6px}
+.pricing-head h2{font-family:var(--font-display);font-size:28px;line-height:1.1;letter-spacing:-.02em}
+.pricing-head p{margin-top:10px;font-size:14px;color:rgba(255,255,255,.72);line-height:1.72;max-width:600px}
+.pricing-body{padding:26px}
+.price-section{border-top:1px solid var(--line);padding-top:24px;margin-top:24px}
+.price-section:first-child{border-top:0;margin-top:0;padding-top:0}
+.price-section h3{font-family:var(--font-display);font-size:20px;line-height:1.18;margin-bottom:8px}
+.price-section>p{color:var(--muted);font-size:13.5px;line-height:1.68;margin-bottom:16px}
+.plan-table{display:grid;gap:10px}
+.plan-row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;background:#fffaf2;border:1px solid var(--line);border-radius:16px;padding:15px 18px;transition:.15s}
+.plan-row:hover{border-color:var(--red);box-shadow:0 4px 16px rgba(183,25,36,.08)}
+.plan-row .label{font-weight:800;font-size:14px}
+.plan-row .sub{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.plan-row b{white-space:nowrap;font-size:20px;letter-spacing:-.03em;font-family:var(--font-display)}
+.plan-row b strong{color:var(--red)}
+.day-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.day-card{background:#fffaf2;border:1px solid var(--line);border-radius:18px;padding:17px}
+.day-card small{display:block;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.day-card b{display:block;font-family:var(--font-display);font-size:26px;color:#111;line-height:1}
+.day-card span{display:block;color:var(--muted);font-size:12.5px;margin-top:7px}
+.tax-table{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
+.tax-grid{display:grid;grid-template-columns:1fr 1fr}
+.tax-col:first-child{border-right:1px solid var(--line)}
+.tax-col h4{padding:13px 16px;background:#261b18;color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.06em}
+.tax-col ul{list-style:none}
+.tax-col li{display:flex;justify-content:space-between;gap:12px;padding:9px 16px;border-bottom:1px solid var(--line);font-size:13px}
+.tax-col li:last-child{border-bottom:0}
+.tax-col span{color:var(--muted)}
+.tax-note{margin-top:14px;border:1px solid rgba(200,155,66,.34);background:#fff9ed;border-radius:16px;padding:14px 16px;font-size:13.5px;line-height:1.68;color:#6a4a12}
+
+.objection{background:var(--soft);border:1px solid var(--line);border-radius:24px;padding:24px 28px;margin-top:20px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+.objection-icon{width:52px;height:52px;background:#fff;border:1px solid var(--line);border-radius:16px;display:grid;place-items:center;font-size:24px;flex-shrink:0}
+.objection h3{font-family:var(--font-display);font-size:18px;margin-bottom:6px}
+.objection p{font-size:13.5px;color:var(--muted);line-height:1.72}
+
+.cta{background:linear-gradient(135deg,#9f202a 0%,#7d171f 58%,#4a1515 100%);color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta:before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat}
+.cta .wrap{position:relative;z-index:1}
+.cta h2{font-family:var(--font-display);font-size:clamp(28px,4.2vw,50px);line-height:1.06;letter-spacing:-.03em;max-width:740px;margin:0 auto 16px}
+.cta h2 em{font-style:normal}
+.cta h2 strong{font-style:normal;color:#fff}
+.cta-lead{max-width:620px;margin:0 auto 16px;color:rgba(255,255,255,.82);font-size:15.5px;line-height:1.82}
+.cta-micro{max-width:480px;margin:0 auto 28px;font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;padding:12px 16px;border-radius:14px;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.1)}
+.final-info{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+.fi{padding:12px 16px;border-radius:16px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.13);min-width:145px}
+.fi small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.48);font-weight:900;margin-bottom:4px}
+.fi b{font-size:13.5px}
+
+footer{background:#171211;color:#fff;padding:34px 0}
+.footer-grid{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;flex-wrap:wrap}
+footer small{display:block;color:rgba(255,255,255,.44);font-size:11.5px;line-height:1.68;margin-top:7px}
+.doclinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.doclinks a{font-size:11.5px;font-weight:800;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);border-radius:999px;padding:7px 12px;transition:.15s}
+.doclinks a:hover{background:rgba(255,255,255,.14)}
+
+.sticky{display:none;position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(247,241,231,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+.sticky a{display:flex;align-items:center;justify-content:center;background:var(--red);color:#fff;border-radius:14px;padding:14px;font-weight:900;font-size:14px}
+
+.fade{opacity:0;transform:translateY(20px);transition:.55s ease}
+.fade.in{opacity:1;transform:none}
+.fade-d1{transition-delay:.1s}
+.fade-d2{transition-delay:.2s}
+
+
+/* Ajuste clean e aconchegante */
+.card,.proof-card,.pricing-panel,.photo-card,.objection{box-shadow:0 14px 34px rgba(61,38,25,.06)}
+.card,.proof-card,.method-item,.security-card,.pain-item,.day-card,.plan-row{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+.card:hover,.proof-card:hover,.method-item:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(61,38,25,.08)}
+.hero-insight{background:rgba(255,247,234,.11);border-left-color:var(--gold)}
+.pain-section{background:linear-gradient(180deg,#2a1d1a 0%,#201614 100%)}
+.proof-icon{background:#fff6e4;color:#8b5d15;border-color:#ead2a5}
+.pricing-head{background:linear-gradient(135deg,#2a1d1a 0%,#171211 100%)}
+.tax-note{background:#fff7e6}
+
+@media(max-width:980px){
+  .topbar{position:relative}
+  .topbar-inner{display:block;padding:12px 0}
+  .brand{justify-content:center;margin-bottom:10px}
+  .nav{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .nav a{text-align:center;background:#fff;border-color:var(--line);border-radius:14px}
+  .nav .primary{grid-column:1/-1}
+  .hero .wrap,.grid-2{grid-template-columns:1fr}
+  .hero .wrap{min-height:auto;padding-top:46px;padding-bottom:52px}
+  .hero-card{max-width:720px}
+  .cols-3,.cols-4,.method-grid,.security-grid,.pain-items,.proof-grid{grid-template-columns:1fr 1fr}
+  .sticky{display:block}
+  body{padding-bottom:86px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 16px}
+  .section{padding:52px 0}
+  .hero{background-position:72% center}
+  .hero .wrap{padding-top:36px;padding-bottom:40px}
+  .hero h1{font-size:33px}
+  .hero-lead{font-size:15px;line-height:1.76}
+  .hero-actions{display:grid;gap:10px}
+  .btn{width:100%;border-radius:15px}
+  .hero-card{padding:18px;border-radius:22px}
+  .title{font-size:28px}
+  .lead{font-size:14.5px}
+  .cols-3,.cols-4,.method-grid,.security-grid,.day-grid,.tax-grid,.pain-items,.proof-grid{grid-template-columns:1fr}
+  .tax-col:first-child{border-right:0;border-bottom:1px solid var(--line)}
+  .plan-row{grid-template-columns:1fr;gap:7px}
+  .plan-row b{font-size:18px}
+  .pricing-body{padding:18px}
+  .pricing-head{padding:20px 18px}
+  .final-info{display:grid;grid-template-columns:1fr 1fr}
+  .footer-grid{display:block}
+  .objection{grid-template-columns:1fr;gap:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .fade{opacity:1;transform:none;transition:none}
+  .btn:hover{transform:none}
+}
+
+/* AUDITORIA FINAL DE LEGIBILIDADE, versão toda prova */
+html,body,button,input,select,textarea,a,p,span,small,strong,b,h1,h2,h3,h4,li,div{font-family:Arial, Helvetica, sans-serif !important;}
+body{font-size:16px;color:#1b1512;background:#f8f1e7;line-height:1.68;text-rendering:optimizeLegibility;}
+.fade,.fade.in{opacity:1 !important;transform:none !important;transition:none !important;}
+.wrap{max-width:1160px;}
+.topbar{background:rgba(248,241,231,.98);border-bottom:1px solid rgba(49,35,29,.16);}
+.nav a{color:#2e2823;font-size:13px;font-weight:800;}
+.brand{color:#171211;}
+.hero{background:linear-gradient(90deg,rgba(18,11,9,.96) 0%,rgba(27,17,14,.90) 47%,rgba(33,20,16,.70) 74%,rgba(33,20,16,.52) 100%),url('assets/hero-barto-primeira-dobra.png') center/cover no-repeat;}
+.hero .wrap{min-height:620px;}
+.hero-badge{color:#fff;background:rgba(0,0,0,.38);border-color:rgba(255,255,255,.24);font-size:11px;}
+.hero h1{font-weight:900;color:#fff;max-width:760px;text-shadow:0 3px 22px rgba(0,0,0,.28);}
+.hero-lead{color:#fff;font-size:17px;line-height:1.82;max-width:700px;text-shadow:0 2px 14px rgba(0,0,0,.28);}
+.hero-insight{color:#fff;background:rgba(0,0,0,.34);border-color:rgba(255,255,255,.22);border-left-color:#d4a74c;font-size:15px;line-height:1.75;}
+.hero-micro{color:rgba(255,255,255,.78);font-size:13px;}
+.hero-card{background:rgba(27,19,17,.90);border-color:rgba(255,255,255,.20);}
+.hero-card p,.mini span{color:rgba(255,255,255,.82);font-size:13.5px;}
+.hero-card small{color:#ffe0a0;background:rgba(200,155,66,.18);}
+.btn{font-size:15px;font-weight:900;min-height:54px;box-shadow:none;}
+.btn-secondary{background:rgba(0,0,0,.28);border-color:rgba(255,255,255,.36);color:#fff;}
+.title{color:#1b1512;line-height:1.12;}
+.dark .title,.security .title,.pain-section .title{color:#fff;}
+.lead{color:#4d453d;font-size:16px;line-height:1.82;}
+.card p,.proof-card p,.method-item p,.objection p,.caption,.price-section>p,.day-card span,.plan-row .sub{color:#4f463e;font-size:14.5px;line-height:1.72;}
+.card h3,.proof-card h3,.method-item h3,.objection h3,.price-section h3{color:#1b1512;}
+.dark .card p,.security-card p,.pain-item p{color:rgba(255,255,255,.84);font-size:14px;line-height:1.72;}
+.dark .card h3,.security-card h3,.pain-item h3{color:#fff;}
+.pain-quote{font-weight:900;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.22);}
+.pain-section .lead{color:rgba(255,255,255,.86) !important;}
+.pain-item{background:rgba(255,255,255,.075);border-color:rgba(255,255,255,.16);}
+.pain-num{color:#e24a55;opacity:.36;}
+.card,.proof-card,.method-item,.photo-card,.pricing-panel,.objection,.plan-row,.day-card,.tax-table{border-color:#d7c6ad;}
+.card,.proof-card,.photo-card,.pricing-panel{box-shadow:0 12px 28px rgba(61,38,25,.075);}
+.pricing-head p{color:rgba(255,255,255,.86);font-size:15px;}
+.plan-row{background:#fff8ec;padding:17px 20px;}
+.plan-row .label{font-size:15.5px;color:#1b1512;}
+.plan-row b{color:#1b1512;font-size:20px;}
+.day-card{background:#fff8ec;}
+.day-card small{color:#5a4f44;font-size:11.5px;}
+.tax-col h4{font-size:12.5px;background:#1f1614;color:#fff;}
+.tax-col li{font-size:14.5px;padding:11px 16px;color:#1b1512;}
+.tax-col li span{color:#3f3832;}
+.tax-col li b{color:#111;}
+.tax-note{color:#47320d;font-size:14.5px;background:#fff4da;border-color:#d8b55e;}
+.cta-lead{color:#fff;font-size:16px;}
+.cta-micro{color:rgba(255,255,255,.86);font-size:14px;background:rgba(0,0,0,.24);}
+.fi{background:rgba(0,0,0,.18);border-color:rgba(255,255,255,.20);}
+.fi small{color:rgba(255,255,255,.72);}
+footer small{color:rgba(255,255,255,.72);font-size:12.5px;}
+.doclinks a{color:#fff;background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.20);}
+.sticky{background:rgba(248,241,231,.98);box-shadow:0 -10px 30px rgba(0,0,0,.10);}
+.sticky a{min-height:52px;}
+@media(max-width:980px){
+  .nav a{font-size:13px;padding:10px 12px;}
+  .hero{background-position:68% center;}
+  .hero .wrap{padding-top:42px;padding-bottom:48px;}
+}
+@media(max-width:640px){
+  body{font-size:15.5px;padding-bottom:88px;}
+  .wrap{padding:0 18px;}
+  .section{padding:48px 0;}
+  .section-tight{padding:42px 0;}
+  .hero{background:linear-gradient(180deg,rgba(18,11,9,.97) 0%,rgba(24,15,12,.92) 58%,rgba(24,15,12,.84) 100%),url('assets/hero-barto-primeira-dobra.png') center/cover no-repeat;}
+  .hero .wrap{padding-top:32px;padding-bottom:38px;gap:22px;}
+  .hero h1{font-size:31px;line-height:1.08;letter-spacing:-.02em;}
+  .hero-lead{font-size:16px;line-height:1.72;margin:18px 0;}
+  .hero-insight{font-size:14.5px;padding:14px 16px;}
+  .hero-card{padding:18px;}
+  .hero-card h2{font-size:22px;}
+  .mini b{font-size:14px;}
+  .mini span{font-size:13.5px;}
+  .title{font-size:27px;line-height:1.14;}
+  .lead{font-size:15.5px;line-height:1.74;}
+  .card,.proof-card,.method-item,.security-card,.pain-item,.objection{padding:18px;}
+  .method-item{display:block;}
+  .num{margin-bottom:12px;}
+  .pain-quote{font-size:25px;line-height:1.22;padding-left:0;}
+  .pain-quote:before{display:none;}
+  .pricing-body{padding:16px;}
+  .pricing-head{padding:20px 18px;}
+  .pricing-head h2{font-size:24px;line-height:1.15;}
+  .plan-row{padding:16px;}
+  .plan-row b{font-size:19px;white-space:normal;}
+  .tax-col li{font-size:14px;}
+  .final-info{grid-template-columns:1fr;}
+  .fi{min-width:0;}
+  footer{padding-bottom:110px;}
+}
+
+
+/* CORREÇÃO MOBILE FINAL: menu escondido no celular e layout sem estouro */
+@media(max-width:768px){
+  .topbar{position:sticky;top:0;}
+  .topbar-inner{display:flex !important;align-items:center;justify-content:center;min-height:58px;padding:8px 0 !important;}
+  .brand{margin:0 !important;justify-content:center;font-size:13px;max-width:100%;white-space:normal;text-align:center;line-height:1.2;}
+  .brand-logo{width:34px;height:34px;flex:0 0 34px;}
+  .nav{display:none !important;}
+  .hero{background-position:center top !important;}
+  .hero .wrap{grid-template-columns:1fr !important;width:100%;}
+  .hero h1,.title{overflow-wrap:anywhere;word-break:normal;}
+  .hero-actions{grid-template-columns:1fr !important;}
+  .btn{max-width:100%;white-space:normal;line-height:1.25;}
+  .card,.proof-card,.method-item,.security-card,.pain-item,.objection,.pricing-panel,.photo-card{max-width:100%;}
+  .tax-table,.pricing-panel,.plan-row,.day-card{max-width:100%;overflow:hidden;}
+  img,video,iframe{max-width:100%;height:auto;}
+}
+@media(max-width:420px){
+  .brand{font-size:12px;gap:8px;}
+  .wrap{padding-left:15px;padding-right:15px;}
+  .hero h1{font-size:29px;}
+  .title{font-size:25px;}
+}
+
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top">
+      <span class="brand-logo"><img src="assets/logo-barto.png" alt="Logo BARTÔ"></span>
+      BARTÔ <span>× Osasco Express</span>
+    </a>
+    <div class="nav">
+      <a href="#problema">O problema</a>
+      <a href="#metodo">Método</a>
+      <a href="#seguranca">Segurança</a>
+      <a href="#valores">Condições</a>
+      <a class="primary" href="#aprovar">Falar agora</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="fade">
+      <div class="hero-badge">Proposta exclusiva para Andrea · BARTÔ Rock &amp; Comedy</div>
+      <h1>Andrea, sua proposta chegou. Uma operação de delivery <em>mais leve</em> para o BARTÔ.</h1>
+      <p class="hero-lead">O BARTÔ tem casa, marca, público e uma rotina intensa. A ideia aqui é simples: tirar o peso da entrega da sua mão e organizar tudo com mais previsibilidade, cuidado e clareza.</p>
+      <div class="hero-insight">
+        <strong>📌 Como ler:</strong> primeiro mostramos a lógica da operação. No final, ficam as condições comerciais, separadas com calma: gestão, diárias e taxas por entrega.
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#problema">Entender a proposta</a>
+        <a class="btn btn-secondary" href="#valores">Ir direto para os valores</a>
+      </div>
+      <p class="hero-micro">Uma conversa objetiva para ajustar horários, raio, volume e início da operação com tranquilidade.</p>
+    </div>
+
+    <aside class="hero-card fade fade-d2">
+      <small>O que muda</small>
+      <h2>Delivery organizado sem pesar na sua rotina</h2>
+      <p>Menos improviso na hora do movimento, mais clareza no acompanhamento e mais tempo para cuidar da experiência do cliente.</p>
+      <div class="mini-list">
+        <div class="mini">
+          <b>Agenda combinada, não improvisada</b>
+          <span>Parceiros definidos por janela operacional, conforme a rotina do BARTÔ.</span>
+        </div>
+        <div class="mini">
+          <b>Reposição acompanhada pela Osasco</b>
+          <span>Rede de parceiros acionada com antecedência para reduzir correria e ruído na operação.</span>
+        </div>
+        <div class="mini">
+          <b>Fechamento sem confusão</b>
+          <span>Diárias, taxas e entregas organizadas para conferência rápida.</span>
+        </div>
+        <div class="mini">
+          <b>Valores separados e claros</b>
+          <span>Gestão mensal, diárias e taxas por distância, tudo discriminado.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<main>
+
+<section class="section pain-section" id="problema">
+  <div class="wrap">
+    <div class="fade">
+      <p class="eyebrow eyebrow-light">O problema real</p>
+      <div class="pain-quote">
+        "Quando a entrega atrasa, não é só o pedido que sente: a experiência do cliente também sente."
+      </div>
+      <p class="lead" style="color:rgba(255,255,255,.7);margin-bottom:0">O cliente percebe quando a operação está ajustada. Por isso, a proposta busca organizar a entrega como parte do cuidado com a marca BARTÔ.</p>
+    </div>
+    <div class="pain-items fade">
+      <div class="pain-item">
+        <div class="pain-num">01</div>
+        <h3>Imprevisto de última hora</h3>
+        <p>Parceiro indisponível perto do movimento. Sem apoio, a loja corre atrás e a rotina aperta.</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num">02</div>
+        <h3>Raio mais bem combinado</h3>
+        <p>Quando distância, taxa e ciclo não estão claros, a entrega demora mais e a fila sente o impacto.</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num">03</div>
+        <h3>Fechamento mais claro</h3>
+        <p>Gestão, diárias e taxas separados para facilitar conferência e reduzir desgaste no fim da semana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="proposta">
+  <div class="wrap grid-2">
+    <div class="photo-card fade">
+      <div class="photo-frame">
+        <img src="assets/barto-fachada.webp" alt="Fachada do BARTÔ Rock &amp; Comedy" loading="lazy">
+      </div>
+      <div class="caption">
+        <strong>O BARTÔ tem identidade, movimento e uma rotina própria.</strong> A entrega precisa entrar como parte natural da operação, com cuidado, presença e previsibilidade.
+      </div>
+    </div>
+    <div class="fade fade-d1">
+      <p class="eyebrow">A proposta</p>
+      <h2 class="title">A Osasco Express não entrega só presença. <em>Entrega organização.</em></h2>
+      <p class="lead">O objetivo é dar à Andrea clareza sobre quem está disponível, quais janelas precisam de apoio, como acompanhar a rotina e como conferir fechamentos, sem depender de improviso na hora do movimento.</p>
+      <div class="cards cols-3" style="margin-top:24px">
+        <article class="card">
+          <div class="icon">📲</div>
+          <h3>Agenda real</h3>
+          <p>Parceiros combinados por janela operacional, conforme a necessidade do BARTÔ.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🔁</div>
+          <h3>Reposição ativa</h3>
+          <p>Em caso de indisponibilidade, a Osasco aciona a rede antes de virar problema.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🧾</div>
+          <h3>Fechamento claro</h3>
+          <p>Diárias, taxas e entregas organizadas. Conferência em minutos.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section method" id="metodo">
+  <div class="wrap">
+    <div class="fade">
+      <p class="eyebrow">Como começa</p>
+      <h2 class="title">Quatro passos. Sem complicar.</h2>
+      <p class="lead">A implantação é rápida. A Osasco Express organiza os canais, alinha as janelas, aciona parceiros e acompanha os primeiros dias para ajustar a rotina.</p>
+    </div>
+    <div class="method-grid fade">
+      <article class="method-item">
+        <div class="num">1</div>
+        <div>
+          <h3>Alinhamento inicial</h3>
+          <p>Entendemos canais, horários, dias de maior movimento e raio de atendimento. Se a Andrea tiver relatórios dos últimos 60 dias, melhor ainda.</p>
+        </div>
+      </article>
+      <article class="method-item">
+        <div class="num">2</div>
+        <div>
+          <h3>Agenda de parceiros</h3>
+          <p>Definimos as janelas operacionais e organizamos a disponibilidade antes de começar, não durante o rush.</p>
+        </div>
+      </article>
+      <article class="method-item">
+        <div class="num">3</div>
+        <div>
+          <h3>Início assistido</h3>
+          <p>Acompanhamos os primeiros dias para ajustar a rotina antes de qualquer problema virar padrão ruim.</p>
+        </div>
+      </article>
+      <article class="method-item">
+        <div class="num">4</div>
+        <div>
+          <h3>Fechamento semanal</h3>
+          <p>Relatório organizado de diárias, entregas e taxas, para a Andrea conferir quando quiser.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section security" id="seguranca">
+  <div class="wrap">
+    <div class="fade">
+      <p class="eyebrow eyebrow-light">Segurança operacional</p>
+      <h2 class="title">Modelo B2B com parceiros autônomos. <em>Tudo documentado.</em></h2>
+      <p class="lead">A relação é entre empresas. Parceiros autônomos com aceite operacional. Isso organiza a rotina sem confundir prestação de serviço com vínculo direto com o restaurante.</p>
+    </div>
+    <div class="security-grid fade">
+      <article class="security-card">
+        <h3>Contrato B2B</h3>
+        <p>Relação comercial documentada entre BARTÔ e Osasco Express.</p>
+      </article>
+      <article class="security-card">
+        <h3>Parceiros autônomos</h3>
+        <p>Atuação por disponibilidade e aceite, sem vínculo direto com o BARTÔ.</p>
+      </article>
+      <article class="security-card">
+        <h3>Agenda digital</h3>
+        <p>Janelas combinadas com antecedência. Sem surpresa na hora do movimento.</p>
+      </article>
+      <article class="security-card">
+        <h3>Registros organizados</h3>
+        <p>Histórico de entregas, diárias e taxas disponível para conferência.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section pricing" id="valores">
+  <div class="wrap">
+    <div class="fade">
+      <p class="eyebrow">Condições comerciais</p>
+      <h2 class="title">Condições claras <em>para decidir com tranquilidade.</em></h2>
+      <p class="lead">Abaixo, os valores ficam separados para facilitar a leitura: gestão mensal, diárias dos parceiros e taxas por entrega realizada.</p>
+    </div>
+
+    <div class="pricing-panel fade" style="margin-top:28px">
+      <div class="pricing-head">
+        <small>Resumo comercial</small>
+        <h2>Gestão mensal + diárias + taxa por entrega</h2>
+        <p>Valores separados por tipo de custo. A estrutura final depende das janelas combinadas e do volume real do BARTÔ.</p>
+      </div>
+      <div class="pricing-body">
+
+        <div class="price-section">
+          <h3>Gestão logística mensal</h3>
+          <p>Faixas de referência conforme volume mensal. A operação começa na faixa compatível com a realidade do BARTÔ.</p>
+          <div class="plan-table">
+            <div class="plan-row">
+              <div>
+                <span class="label">Até 700 entregas por mês</span>
+                <span class="sub">Faixa inicial, começo mais leve</span>
+              </div>
+              <b><strong>R$ 699</strong>/mês</b>
+            </div>
+            <div class="plan-row">
+              <div>
+                <span class="label">Até 1.300 entregas por mês</span>
+                <span class="sub">Faixa média, operação crescendo</span>
+              </div>
+              <b>R$ 1.299/mês</b>
+            </div>
+            <div class="plan-row">
+              <div>
+                <span class="label">Até 1.800 entregas por mês</span>
+                <span class="sub">Faixa contratada, operação consolidada</span>
+              </div>
+              <b>R$ 1.599/mês</b>
+            </div>
+            <div class="plan-row">
+              <div>
+                <span class="label">Acima de 1.800 entregas por mês</span>
+                <span class="sub">Condição mediante aditivo ao contrato</span>
+              </div>
+              <b>Sob medida</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-section">
+          <h3>Diárias dos parceiros</h3>
+          <p>Valor por parceiro, conforme janela operacional combinada. A alocação é definida de acordo com a necessidade real.</p>
+          <div class="day-grid">
+            <div class="day-card">
+              <small>Segunda a quinta</small>
+              <b>R$ 65</b>
+              <span>por parceiro / janela operacional</span>
+            </div>
+            <div class="day-card">
+              <small>Sexta, sábado, domingo e feriados</small>
+              <b>R$ 70</b>
+              <span>por parceiro / janela operacional</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-section">
+          <h3>Taxas por entrega</h3>
+          <p>Valor por corrida realizada, de acordo com distância e período. Com leitura simples no fechamento.</p>
+          <div class="tax-table">
+            <div class="tax-grid">
+              <div class="tax-col">
+                <h4>Segunda a quinta</h4>
+                <ul>
+                  <li><span>1 km</span><b>R$ 7,00</b></li>
+                  <li><span>2 km</span><b>R$ 7,00</b></li>
+                  <li><span>3 km</span><b>R$ 8,00</b></li>
+                  <li><span>4 km</span><b>R$ 8,00</b></li>
+                  <li><span>5 km</span><b>R$ 9,00</b></li>
+                  <li><span>6 km</span><b>R$ 10,00</b></li>
+                  <li><span>7 km</span><b>R$ 11,00</b></li>
+                  <li><span>8 km</span><b>R$ 12,00</b></li>
+                  <li><span>9 km</span><b>R$ 13,00</b></li>
+                  <li><span>10 a 11 km</span><b>R$ 15,00</b></li>
+                  <li><span>12 a 13 km</span><b>R$ 16,00</b></li>
+                </ul>
+              </div>
+              <div class="tax-col">
+                <h4>Sexta a domingo + feriados</h4>
+                <ul>
+                  <li><span>1 km</span><b>R$ 9,00</b></li>
+                  <li><span>2 km</span><b>R$ 9,00</b></li>
+                  <li><span>3 km</span><b>R$ 9,00</b></li>
+                  <li><span>4 km</span><b>R$ 10,00</b></li>
+                  <li><span>5 km</span><b>R$ 11,00</b></li>
+                  <li><span>6 km</span><b>R$ 11,00</b></li>
+                  <li><span>7 km</span><b>R$ 13,00</b></li>
+                  <li><span>8 km</span><b>R$ 14,00</b></li>
+                  <li><span>9 km</span><b>R$ 15,00</b></li>
+                  <li><span>10 a 12 km</span><b>R$ 17,00</b></li>
+                  <li><span>13 km</span><b>R$ 21,00</b></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="tax-note">
+            <strong>Estrutura sob medida:</strong> a definição final considera janelas combinadas, quantidade de parceiros e rotina ajustada com o BARTÔ. A próxima conversa serve para fechar isso com calma.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="objection fade">
+      <div class="objection-icon">💬</div>
+      <div>
+        <h3>"E se eu quiser começar pequeno e ver como vai?"</h3>
+        <p>Faz todo sentido. A faixa inicial atende até 700 entregas por mês e permite ajustar a rotina com cuidado antes de ampliar.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section cta" id="aprovar">
+  <div class="wrap fade">
+    <h2><em>Andrea,</em> a próxima etapa pode ser mais simples: organizar o delivery do BARTÔ com calma, clareza e acompanhamento.</h2>
+    <p class="cta-lead">O BARTÔ merece uma operação de entrega à altura da casa: bem combinada, acompanhada e fácil de conferir.</p>
+    <div class="cta-micro">
+      Uma conversa objetiva para validar horários, volume, raio e melhor forma de começar. Sem pacote empurrado.
+    </div>
+    <a class="btn btn-dark" href="https://wa.me/5511924782555?text=Ol%C3%A1%2C%20sou%20a%20Andrea%20do%20BART%C3%94%20Rock%20%26%20Comedy.%20Vi%20a%20proposta%20da%20Osasco%20Express%20e%20gostaria%20de%20conversar%20sobre%20a%20opera%C3%A7%C3%A3o%20de%20delivery%20do%20BART%C3%94.">
+      Conversar sobre a operação →
+    </a>
+    <div class="final-info">
+      <div class="fi"><small>Operação</small><b>segunda a domingo</b></div>
+      <div class="fi"><small>Diárias</small><b>R$ 65 / R$ 70</b></div>
+      <div class="fi"><small>Taxas</small><b>por distância</b></div>
+      <div class="fi"><small>Gestão</small><b>a partir de R$ 699</b></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <strong>Osasco Express Serviços Ltda ME</strong>
+      <small>CNPJ 54.707.097/0001-04 · Av. Diogo Antônio Feijó, 8555 · Km 18 · Osasco/SP<br>Proposta confidencial · uso exclusivo BARTÔ Rock &amp; Comedy</small>
+      <div class="doclinks">
+        <a href="assets/proposta-barto.pdf" target="_blank">Proposta PDF</a>
+        <a href="assets/contrato-barto.pdf" target="_blank">Contrato B2B</a>
+        <a href="assets/termo-agenda-parceiro.pdf" target="_blank">Termo de agenda</a>
+      </div>
+    </div>
+    <small>© 2026 Osasco Express · Gestão logística de delivery</small>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a href="https://wa.me/5511924782555?text=Ol%C3%A1%2C%20sou%20a%20Andrea%20do%20BART%C3%94%20Rock%20%26%20Comedy.%20Vi%20a%20proposta%20da%20Osasco%20Express%20e%20gostaria%20de%20conversar%20sobre%20a%20opera%C3%A7%C3%A3o%20de%20delivery%20do%20BART%C3%94.">
+    Conversar sobre a operação →
+  </a>
+</div>
+
+<script>
+const io = new IntersectionObserver(
+  es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in') }),
+  { threshold: 0.08 }
+);
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
